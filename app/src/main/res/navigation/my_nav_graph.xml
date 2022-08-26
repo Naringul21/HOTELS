@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav_graph"
+    app:startDestination="@id/onBoardingFragment">
+
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="com.example.hotels.HOTELS.presentation.ui.fragments.OnBoardingFragment"
+        android:label="fragment_on_boarding"
+        tools:layout="@layout/fragment_on_boarding" />
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.example.hotels.HOTELS.presentation.ui.fragments.HomeFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.example.hotels.HOTELS.presentation.ui.fragments.SeeAllFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_see_all" />
+</navigation>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".HOTELS.presentation.ui.sign_up_fragment.SignUpFragment"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="10dp">
+    
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="245dp"
+        android:id="@+id/signUpImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/dm_serif_display"
+        android:text="Sign Up"
+        android:id="@+id/text_Signup"
+        android:textColor="@color/toolbar_background3"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/signUpImage"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:fontFamily="@font/dm_serif_display"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_info1"
+        android:text="Fill your details or continue with social media"
+        android:textColor="@color/toolbar_background3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_Signup"
+        android:layout_marginTop="10dp"
+        />
+
+    <Button
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:id="@+id/button_withGoogle"
+        android:background="@drawable/edit_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_info1"
+        android:text="with Google"
+        android:textColor="@color/text_with_color"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="10dp"
+        />
+
+    <Button
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:id="@+id/button_withFacebook"
+        android:background="@drawable/edit_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_info1"
+        android:text="with Facebook"
+        android:textColor="@color/text_with_color"
+        android:layout_marginTop="40dp"
+
+        />
+    
+    <EditText
+        android:id="@+id/edit_fullName"
+        android:layout_width="297dp"
+        android:layout_height="0dp"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:hint="Full Name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_withGoogle"
+        android:layout_marginTop="20dp"
+        />
+
+    <EditText
+        android:id="@+id/edit_email"
+        android:layout_width="297dp"
+        android:layout_height="0dp"
+        android:drawableStart="@drawable/ic_baseline_alternate_email_24"
+        android:hint="Email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_fullName"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/edit_password"
+        android:layout_width="297dp"
+        android:layout_height="0dp"
+        android:drawableStart="@drawable/ic_baseline_vpn_key_24"
+        android:hint="Password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_email"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/button_continue"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:background="@drawable/toolbar_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp"
+        android:text="Continue"
+        android:textColor="@color/white"/>
+
+
+  
+</androidx.constraintlayout.widget.ConstraintLayout>

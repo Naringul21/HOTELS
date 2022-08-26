@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/drawable/button_style.xml" value="0.1335" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/drawable/edit_background.xml" value="0.1335" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/drawable/toolbar_background.xml" value="0.1335" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/font/my_font.xml" value="0.28" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/activity_splash_screen.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/first_activity_layout.xml" value="0.2" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_first.xml" value="0.264" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_home.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_log_in.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_on_boarding.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_see_all.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_sign_in.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_sign_up.xml" value="0.264" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/splash_screen.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/splash_screen_activity.xml" value="0.264" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/menu/bottom_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/mipmap-anydpi-v26/google_icon_round.xml" value="0.1335" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/mipmap-anydpi-v26/signUp.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
