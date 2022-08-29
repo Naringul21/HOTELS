@@ -5,6 +5,11 @@
     <string name="latest_searching">LATEST SEARCHING</string>
 
     <string name="with_Google">with Google</string>
+    <string name="incomplete_information_entered">Incomplete information entered</string>
+    <string name="invalid_mail">Invalid email</string>
+    <string name="password_match_error">Password match error</string>
+    <string name="sign_up_snack_text">Sign up snack text</string>
+    <string name="registered_mail">Registered mail!</string>
 
     <style name="TestStyleWithLineHeight.">17dp</style>
 </resources>

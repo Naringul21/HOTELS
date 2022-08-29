@@ -5,13 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import com.example.hotels.HOTELS.presentation.ui.sign_up_fragment.SignUpFragment
 //import com.example.hotels.HOTELS.helper.PicassoImage
 import com.example.hotels.R
+import com.example.hotels.databinding.SplashScreenActivityBinding
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.splash_screen_activity.*
 
 class SplashScreen_Activity : AppCompatActivity() {
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +23,7 @@ class SplashScreen_Activity : AppCompatActivity() {
             .error(R.mipmap.splash_image_foreground).into(Splash_image)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, FirstActivity::class.java))
+            startActivity(Intent(this, SignUpFragment::class.java))
             finish()
         }, 7000)
     }
