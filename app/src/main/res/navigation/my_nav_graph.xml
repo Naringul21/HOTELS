@@ -9,15 +9,41 @@
         android:id="@+id/onBoardingFragment"
         android:name="com.example.hotels.HOTELS.presentation.ui.fragments.OnBoardingFragment"
         android:label="fragment_on_boarding"
-        tools:layout="@layout/fragment_on_boarding" />
+        tools:layout="@layout/fragment_on_boarding" >
+        <action
+            android:id="@+id/action_onBoardingFragment_to_signUpFragment2"
+            app:destination="@id/signUpFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/firstFragment"
-        android:name="com.example.hotels.HOTELS.presentation.ui.fragments.HomeFragment"
+        android:id="@+id/homeFragment"
+        android:name="com.example.hotels.HOTELS.presentation.ui.HomeFragment.HomeFragment"
         android:label="fragment_first"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+    </fragment>
     <fragment
         android:id="@+id/secondFragment"
-        android:name="com.example.hotels.HOTELS.presentation.ui.fragments.SeeAllFragment"
+        android:name="com.example.hotels.HOTELS.presentation.ui.SeeAllFragment.SeeAllFragment"
         android:label="fragment_second"
         tools:layout="@layout/fragment_see_all" />
+    <fragment
+        android:id="@+id/logInFragment"
+        android:name="com.example.hotels.HOTELS.presentation.ui.LogInFragment.LogInFragment"
+        android:label="fragment_log_in"
+        tools:layout="@layout/fragment_log_in" >
+        <action
+            android:id="@+id/action_logInFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.hotels.HOTELS.presentation.ui.sign_up_fragment.SignUpFragment"
+        android:label="SignUpFragment"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_signUpFragment2_to_logInFragment"
+            app:destination="@id/logInFragment" />
+    </fragment>
 </navigation>

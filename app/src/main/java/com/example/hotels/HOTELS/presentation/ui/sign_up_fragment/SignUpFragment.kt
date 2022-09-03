@@ -1,42 +1,41 @@
 package com.example.hotels.HOTELS.presentation.ui.sign_up_fragment
 
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
-import com.example.hotels.HOTELS.domain.repositorys.AuthListener
-import com.example.hotels.HOTELS.domain.repositorys.FirebaseInstanceRepository
-import com.example.hotels.HOTELS.presentation.ui.FirstActivity
-import com.example.hotels.HOTELS.utils.Resources
 import com.example.hotels.HOTELS.utils.showSnackbar
 import com.example.hotels.R
 import com.example.hotels.databinding.FragmentSignUpBinding
 import kotlinx.android.synthetic.main.fragment_sign_up.*
 
 
-class SignUpFragment : Fragment() {
-    private var _binding: FragmentSignUpBinding? = null
-    private val binding get() = _binding!!
+class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
+    private var _binding: FragmentSignUpBinding?=null
+    private val binding : FragmentSignUpBinding get() = _binding!!
 
     private val viewModel by lazy { SignUpViewModel() }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        return inflater.inflate(R.layout.fragment_sign_up, container, false)
+    ): View? {
+
+        _binding= FragmentSignUpBinding.inflate(inflater,container,false)
+
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.signUpFragmentObject = this
+        signUpButton.setOnClickListener {
+            signUpButton(edit_email.toString(), edit_password.toString(), edit_fullName.toString())
+        }
         initObservers()
+
+
     }
 
     private fun initObservers() {
@@ -85,7 +84,7 @@ class SignUpFragment : Fragment() {
     fun signUpButton(
         email: String,
         password: String,
-        fullname: String,
+        fullname: String
     ) {
         viewModel.signUp(email, password, fullname)
     }

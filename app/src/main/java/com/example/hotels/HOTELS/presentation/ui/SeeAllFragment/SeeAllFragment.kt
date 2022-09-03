@@ -1,4 +1,4 @@
-package com.example.hotels.HOTELS.presentation.ui.fragments
+package com.example.hotels.HOTELS.presentation.ui.SeeAllFragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -16,6 +16,8 @@ class SeeAllFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_see_all, container, false)
+
+
     }
 
 

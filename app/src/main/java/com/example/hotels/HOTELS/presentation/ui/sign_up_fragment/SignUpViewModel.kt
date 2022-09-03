@@ -1,15 +1,10 @@
 package com.example.hotels.HOTELS.presentation.ui.sign_up_fragment
 
-import android.content.Intent
 import android.util.Patterns
-import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.hotels.HOTELS.domain.repositorys.AuthListener
 import com.example.hotels.HOTELS.domain.repositorys.FirebaseInstanceRepository
-import com.example.hotels.HOTELS.presentation.ui.fragments.LogInFragment
-import com.example.hotels.HOTELS.utils.Resources
 
 class SignUpViewModel : ViewModel(){
 

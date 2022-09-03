@@ -14,6 +14,7 @@
     <color name="fr_background">#E7E7E7</color>
     <color name="button_background">#D3E7E7E7</color>
     <color name="text_with_color">#4B4B4B</color>
+    <color name="fragment_background">#FFE9CE</color>
 
 
 </resources>

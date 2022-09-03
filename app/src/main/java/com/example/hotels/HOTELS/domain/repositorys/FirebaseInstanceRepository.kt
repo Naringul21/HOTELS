@@ -2,6 +2,7 @@ package com.example.hotels.HOTELS.domain.repositorys
 
 import android.app.backup.FullBackupDataOutput
 import android.content.ContentValues
+import android.content.ContentValues.TAG
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.example.hotels.HOTELS.data.models.FirebaseUserModel
@@ -30,6 +31,24 @@ class FirebaseInstanceRepository {
 
     private var auth = Firebase.auth
     private val db = Firebase.firestore
+
+    fun addDataToFirebase(name: String, price: Int, info: String, image: String){
+        val myData= mutableMapOf<String, Any>()
+        myData["name"]=name
+        myData["price"]=price
+        myData["info"]=info
+        myData["image"]=image
+
+        db.collection("hotels")
+            .add(myData)
+            .addOnSuccessListener {documentReference->
+                Log.w(TAG,"DocumentSnapshot added with ID:${documentReference.id}")
+            }
+            .addOnFailureListener { e->
+                Log.w(TAG,"Error adding document", e)
+            }
+
+    }
 
     fun signIn(eMail: String, password: String) {
 

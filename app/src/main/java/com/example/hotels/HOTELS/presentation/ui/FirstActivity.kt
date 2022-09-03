@@ -9,7 +9,6 @@ import com.google.firebase.auth.FirebaseAuth
 
 class FirstActivity : AppCompatActivity() {
 
-   lateinit var viewModel: SignUpViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
