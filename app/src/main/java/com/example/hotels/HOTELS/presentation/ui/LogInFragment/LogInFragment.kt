@@ -10,6 +10,7 @@ import com.example.hotels.HOTELS.presentation.ui.HomeFragment.HomeFragment
 import com.example.hotels.HOTELS.utils.showSnackbar
 import com.example.hotels.R
 import com.example.hotels.databinding.FragmentLogInBinding
+import com.example.hotels.databinding.FragmentSignUpBinding
 import kotlinx.android.synthetic.main.fragment_log_in.*
 import kotlinx.android.synthetic.main.fragment_sign_up.*
 
@@ -17,7 +18,7 @@ class LogInFragment : Fragment(R.layout.fragment_log_in) {
 
 
     private var _binding: FragmentLogInBinding? = null
-    private val binding get() = _binding!!
+    private val binding :FragmentLogInBinding get() = _binding!!
 
     private val viewModel by lazy { LogInFragmentViewModel() }
 
@@ -25,7 +26,9 @@ class LogInFragment : Fragment(R.layout.fragment_log_in) {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        return inflater.inflate(R.layout.fragment_log_in, container, false)
+        _binding= FragmentLogInBinding.inflate(inflater,container,false)
+
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

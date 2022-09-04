@@ -73,7 +73,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/emailInputLayoutLogin"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_marginTop="20dp"
             android:textColorHint="@color/text_color"
             app:boxStrokeColor="@color/toolbar_background3"
@@ -84,21 +84,20 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_emailLogin"
-                android:layout_width="297dp"
-                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginTop="20dp"
                 android:drawableStart="@drawable/ic_baseline_alternate_email_24"
                 android:hint="Email"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/edit_fullName" />
+                app:layout_constraintStart_toStartOf="parent" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/passwordInputLayoutLogin"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_marginTop="20dp"
             android:textColorHint="@color/text_color"
             app:boxStrokeColor="@color/toolbar_background3"
@@ -108,14 +107,13 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_passwordLogin"
-                android:layout_width="297dp"
-                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginTop="20dp"
                 android:drawableStart="@drawable/ic_baseline_vpn_key_24"
                 android:hint="Password"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/edit_email" />
+                app:layout_constraintStart_toStartOf="parent" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

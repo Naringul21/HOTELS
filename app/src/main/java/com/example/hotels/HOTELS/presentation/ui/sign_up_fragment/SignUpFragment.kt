@@ -30,8 +30,10 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         signUpButton.setOnClickListener {
-            signUpButton(edit_email.toString(), edit_password.toString(), edit_fullName.toString())
+            signUpButton(edit_email.text.toString(), edit_password.text.toString(), edit_fullName.text.toString())
+
         }
         initObservers()
 
