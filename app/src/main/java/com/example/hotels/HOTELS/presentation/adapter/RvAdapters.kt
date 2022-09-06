@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hotels.HOTELS.data.db.HotelsHomeFragment
+import com.example.hotels.HOTELS.data.db.HotelsHomeSeeAll
 import com.example.hotels.HOTELS.data.db.hotelLatestSearching
 import com.example.hotels.R
 import com.squareup.picasso.Picasso
@@ -41,12 +41,12 @@ class rvLatestSearchAdapter(private val hotelList: ArrayList<hotelLatestSearchin
 }
 
 
-class rvHomeFragmentAdapter(private val hotelList2: ArrayList<HotelsHomeFragment>) :RecyclerView.Adapter<rvHomeFragmentAdapter.MyViewHolder2>(){
+class rvHomeFragmentAdapter(private val hotelList2: ArrayList<HotelsHomeSeeAll>) :RecyclerView.Adapter<rvHomeFragmentAdapter.MyViewHolder2>(){
     inner class MyViewHolder2(viewItem: View) : RecyclerView.ViewHolder(viewItem){
         val name: TextView =itemView.findViewById(R.id.hotelName_homeFr)
-        var location: TextView =itemView.findViewById(R.id.hotelLocation_homeFr)
-        var image: ImageView =itemView.findViewById(R.id.hotel_image_homeFr)
-        var price: TextView =itemView.findViewById(R.id.hotelPrice_homeFr)
+        val location: TextView =itemView.findViewById(R.id.hotelLocation_homeFr)
+        val image: ImageView =itemView.findViewById(R.id.hotel_image_homeFr)
+        val price: TextView =itemView.findViewById(R.id.hotelPrice_homeFr)
 
 
     }
@@ -59,7 +59,7 @@ class rvHomeFragmentAdapter(private val hotelList2: ArrayList<HotelsHomeFragment
     }
 
     override fun onBindViewHolder(holder: MyViewHolder2, position: Int) {
-        val hotel2: HotelsHomeFragment=hotelList2[position]
+        val hotel2: HotelsHomeSeeAll=hotelList2[position]
         holder.apply {
             name.text=hotel2.name
             location.text=hotel2.location

@@ -24,9 +24,9 @@ class OnBoardingFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_on_boarding, container, false)
 
         val fragmentList = listOf<Fragment>(
-            SignUpFragment(),
-            LogInFragment(),
             HomeFragment(),
+            LogInFragment(),
+            SignUpFragment(),
             SeeAllFragment(),
         )
         val adapter =

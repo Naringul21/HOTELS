@@ -5,13 +5,15 @@ import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.example.hotels.HOTELS.utils.showSnackbar
 import com.example.hotels.R
 import com.example.hotels.databinding.FragmentSignUpBinding
 import kotlinx.android.synthetic.main.fragment_sign_up.*
 
 
-class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
+class SignUpFragment : Fragment(R.layout.fragment_sign_up), View.OnClickListener {
     private var _binding: FragmentSignUpBinding?=null
     private val binding : FragmentSignUpBinding get() = _binding!!
 
@@ -31,10 +33,12 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        signUpButton.setOnClickListener {
-            signUpButton(edit_email.text.toString(), edit_password.text.toString(), edit_fullName.text.toString())
+        signUpButton.setOnClickListener(this)
 
-        }
+//        signUpButton.setOnClickListener {
+//            signUpButton(edit_email.text.toString(), edit_password.text.toString(), edit_fullName.text.toString())
+//
+//        }
         initObservers()
 
 
@@ -105,5 +109,17 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+
+    override fun onClick(p0: View?) {
+        when(p0) {
+            signUpButton ->{
+                signUpButton(edit_email.text.toString(),
+                    edit_password.text.toString(),
+                    edit_fullName.text.toString())
+
+        }
+        }
     }
 }

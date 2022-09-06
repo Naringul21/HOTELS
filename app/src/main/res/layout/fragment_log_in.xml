@@ -73,7 +73,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/emailInputLayoutLogin"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="60dp"
             android:layout_marginTop="20dp"
             android:textColorHint="@color/text_color"
             app:boxStrokeColor="@color/toolbar_background3"
@@ -97,7 +97,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/passwordInputLayoutLogin"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="60dp"
             android:layout_marginTop="20dp"
             android:textColorHint="@color/text_color"
             app:boxStrokeColor="@color/toolbar_background3"

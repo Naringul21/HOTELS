@@ -11,8 +11,8 @@
         android:label="fragment_on_boarding"
         tools:layout="@layout/fragment_on_boarding" >
         <action
-            android:id="@+id/action_onBoardingFragment_to_signUpFragment2"
-            app:destination="@id/signUpFragment" />
+            android:id="@+id/action_onBoardingFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -34,6 +34,9 @@
         android:label="fragment_log_in"
         tools:layout="@layout/fragment_log_in" >
         <action
+            android:id="@+id/action_logInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
             android:id="@+id/action_logInFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
@@ -43,7 +46,7 @@
         android:label="SignUpFragment"
         tools:layout="@layout/fragment_sign_up">
         <action
-            android:id="@+id/action_signUpFragment2_to_logInFragment"
-            app:destination="@id/logInFragment" />
+            android:id="@+id/action_signUpFragment2_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

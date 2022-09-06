@@ -34,8 +34,8 @@ class LogInFragment : Fragment(R.layout.fragment_log_in) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        signUpButton.setOnClickListener {
-            signInButton(edit_emailLogin.toString(), edit_passwordLogin.toString())
+        signInButton.setOnClickListener {
+            signInButton(edit_emailLogin.text.toString(), edit_passwordLogin.text.toString())
         }
 
         with(viewModel) {
