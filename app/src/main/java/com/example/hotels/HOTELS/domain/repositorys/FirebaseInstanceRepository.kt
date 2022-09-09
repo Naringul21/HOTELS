@@ -1,54 +1,55 @@
 package com.example.hotels.HOTELS.domain.repositorys
 
-import android.app.backup.FullBackupDataOutput
 import android.content.ContentValues
-import android.content.ContentValues.TAG
 import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.example.hotels.HOTELS.data.db.Hotels
 import com.example.hotels.HOTELS.data.models.FirebaseUserModel
 import com.example.hotels.HOTELS.utils.Constants.COLLECTION_PATH
 import com.example.hotels.HOTELS.utils.Constants.E_MAIL
 import com.example.hotels.HOTELS.utils.Constants.FAILURE
 import com.example.hotels.HOTELS.utils.Constants.FULLNAME
 import com.example.hotels.HOTELS.utils.Constants.ID
-import com.example.hotels.HOTELS.utils.Constants.NICKNAME
 import com.example.hotels.HOTELS.utils.Constants.PASSWORD
 import com.example.hotels.HOTELS.utils.Constants.SIGN_IN
 import com.example.hotels.HOTELS.utils.Constants.SIGN_UP
 import com.example.hotels.HOTELS.utils.Constants.SUCCESS
-import com.example.hotels.HOTELS.utils.Resources
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.*
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
-class FirebaseInstanceRepository {
+class FirebaseInstanceRepository() {
     var isSignIn = MutableLiveData<Boolean>()
 
     var isSignUp = MutableLiveData<Boolean>()
 
     var userInfo = MutableLiveData<FirebaseUserModel>()
 
-    private var auth = Firebase.auth
-    private val db = Firebase.firestore
+    private val auth = Firebase.auth
+    private var db = Firebase.firestore
 
-    fun addDataToFirebase(name: String, price: Int, info: String, image: String){
-        val myData= mutableMapOf<String, Any>()
-        myData["name"]=name
-        myData["price"]=price
-        myData["info"]=info
-        myData["image"]=image
-
-        db.collection("hotels")
-            .add(myData)
-            .addOnSuccessListener {documentReference->
-                Log.w(TAG,"DocumentSnapshot added with ID:${documentReference.id}")
+    fun getHotelData(): LiveData<MutableList<Hotels>> {
+        val mutableData = MutableLiveData<MutableList<Hotels>>()
+        FirebaseFirestore.getInstance().collection("hotelList_seeAll_fragments").get().addOnSuccessListener {
+            val listData: MutableList<Hotels> = mutableListOf<Hotels>()
+            for (document:QueryDocumentSnapshot in it){
+                val image: String?=document.getString("image")
+                val location: String?=document.getString("infoLocation")
+                val name: String?=document.getString("name")
+                val price: String?=document.getString("price")
+                val room: String?=document.getString("infoRoom")
+                val meal: String?=document.getString("infoMeal")
+//                val rating: Int? =document.getLong("rating")
+                val hotels=Hotels(name, location, image, price, meal, room)
+                listData.add(hotels)
             }
-            .addOnFailureListener { e->
-                Log.w(TAG,"Error adding document", e)
-            }
-
+            mutableData.value=listData
+        }
+        return mutableData
     }
+
 
     fun signIn(eMail: String, password: String) {
 
@@ -76,7 +77,7 @@ class FirebaseInstanceRepository {
                         ID to fbUser.uid,
                         E_MAIL to eMail,
                         FULLNAME to fullname,
-                       PASSWORD to password
+                        PASSWORD to password
                     )
 
                     db.collection(COLLECTION_PATH).document(fbUser.uid)
@@ -121,4 +122,6 @@ class FirebaseInstanceRepository {
     fun signOut() {
         auth.signOut()
     }
+
+
 }

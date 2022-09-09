@@ -6,13 +6,15 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hotels.HOTELS.data.db.HotelsHomeSeeAll
-import com.example.hotels.HOTELS.data.db.hotelLatestSearching
+import com.example.hotels.HOTELS.data.db.Hotels
 import com.example.hotels.R
 import com.squareup.picasso.Picasso
 
-class rvLatestSearchAdapter(private val hotelList: ArrayList<hotelLatestSearching>) :RecyclerView.Adapter<rvLatestSearchAdapter.MyViewHolder>(){
+class RvLatestSearchAdapter() :RecyclerView.Adapter<RvLatestSearchAdapter.MyViewHolder>(){
+    fun setListData(data: MutableList<Hotels>) {
+        dataList = data
 
+    }
     inner class MyViewHolder(viewItem: View) : RecyclerView.ViewHolder(viewItem){
         val name: TextView =itemView.findViewById(R.id.hotelName)
         var location: TextView =itemView.findViewById(R.id.hotelLocation)
@@ -27,7 +29,7 @@ class rvLatestSearchAdapter(private val hotelList: ArrayList<hotelLatestSearchin
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
-        val hotel: hotelLatestSearching=hotelList[position]
+        val hotel: Hotels= dataList[position]
         holder.apply {
             name.text=hotel.name
             location.text=hotel.location
@@ -36,12 +38,19 @@ class rvLatestSearchAdapter(private val hotelList: ArrayList<hotelLatestSearchin
     }
 
     override fun getItemCount(): Int {
-        return hotelList.size
+        return dataList.size
     }
 }
 
 
-class rvHomeFragmentAdapter(private val hotelList2: ArrayList<HotelsHomeSeeAll>) :RecyclerView.Adapter<rvHomeFragmentAdapter.MyViewHolder2>(){
+class RvHomeFragmentAdapter() :RecyclerView.Adapter<RvHomeFragmentAdapter.MyViewHolder2>(){
+    fun setListData(data: MutableList<Hotels>){
+        dataList=data
+
+        val yourMutableList: MutableList<Hotels> = mutableListOf()
+        yourMutableList.sortBy { it.price }
+    }
+
     inner class MyViewHolder2(viewItem: View) : RecyclerView.ViewHolder(viewItem){
         val name: TextView =itemView.findViewById(R.id.hotelName_homeFr)
         val location: TextView =itemView.findViewById(R.id.hotelLocation_homeFr)
@@ -59,7 +68,7 @@ class rvHomeFragmentAdapter(private val hotelList2: ArrayList<HotelsHomeSeeAll>)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder2, position: Int) {
-        val hotel2: HotelsHomeSeeAll=hotelList2[position]
+        val hotel2: Hotels=dataList[position]
         holder.apply {
             name.text=hotel2.name
             location.text=hotel2.location
@@ -69,7 +78,47 @@ class rvHomeFragmentAdapter(private val hotelList2: ArrayList<HotelsHomeSeeAll>)
     }
 
     override fun getItemCount(): Int {
-       return hotelList2.size
+       return dataList.size
     }
 }
+
+class RvSeeAllListAdapter() :RecyclerView.Adapter<RvSeeAllListAdapter.MyViewHolder>(){
+    fun setListData(data: MutableList<Hotels>){
+        dataList=data
+
+    }
+    inner class MyViewHolder(viewItem: View) : RecyclerView.ViewHolder(viewItem){
+        val name: TextView =itemView.findViewById(R.id.hotelName_seeAll)
+        var location: TextView =itemView.findViewById(R.id.hotelLocation_seeAll)
+        var image: ImageView =itemView.findViewById(R.id.hotel_image_seeAll)
+        val price: TextView=itemView.findViewById(R.id.hotelPrice_seeAll)
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+        val itemView= LayoutInflater.from(parent.context)
+            .inflate(R.layout.rv_see_all_list_items, parent, false)
+        return MyViewHolder(itemView)
+    }
+
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+
+        val hotel: Hotels= dataList[position]
+        holder.apply {
+            name.text=hotel.name
+            location.text=hotel.location
+            price.text=hotel.price
+            Picasso.get().load(hotel.image).into(image)
+        }
+    }
+
+    override fun getItemCount(): Int {
+        return dataList.size
+    }
+}
+
+private var dataList= mutableListOf<Hotels>()
+
+
+
+
 

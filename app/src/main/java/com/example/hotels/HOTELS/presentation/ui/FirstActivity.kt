@@ -6,6 +6,7 @@ import androidx.navigation.fragment.NavHostFragment
 import com.example.hotels.HOTELS.presentation.ui.sign_up_fragment.SignUpViewModel
 import com.example.hotels.R
 import com.google.firebase.auth.FirebaseAuth
+import dagger.hilt.android.AndroidEntryPoint
 
 class FirstActivity : AppCompatActivity() {
 

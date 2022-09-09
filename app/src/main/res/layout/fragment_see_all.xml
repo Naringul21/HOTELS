@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/seeAllFragment"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".HOTELS.presentation.ui.SeeAllFragment.SeeAllFragment">
 
@@ -57,7 +58,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="570dp"
         android:id="@+id/rv_see_all_hotels"
         app:layout_constraintTop_toBottomOf="@id/fr_layout_filters"
         android:layout_marginTop="20dp"/>

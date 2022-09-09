@@ -11,8 +11,8 @@
         android:label="fragment_on_boarding"
         tools:layout="@layout/fragment_on_boarding" >
         <action
-            android:id="@+id/action_onBoardingFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_onBoardingFragment_to_secondFragment"
+            app:destination="@id/seeAllFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -21,12 +21,12 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_secondFragment"
-            app:destination="@id/secondFragment" />
+            app:destination="@id/seeAllFragment" />
     </fragment>
     <fragment
-        android:id="@+id/secondFragment"
+        android:id="@+id/seeAllFragment"
         android:name="com.example.hotels.HOTELS.presentation.ui.SeeAllFragment.SeeAllFragment"
-        android:label="fragment_second"
+        android:label="fragment_seeAll"
         tools:layout="@layout/fragment_see_all" />
     <fragment
         android:id="@+id/logInFragment"
