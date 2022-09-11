@@ -3,9 +3,18 @@
 
     <style name="text_style">
         <item name="android:lineHeight">17dp</item>
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">20dp</item>
         <item name="fontFamily">@font/alata</item>
-        <item name="android:textStyle">bold</item>
+<!--        <item name="android:textStyle">bold</item>-->
         <item name="color">@color/text_color</item>
     </style>
+
+    <style name="text_style_1">
+        <item name="android:lineHeight">20dp</item>
+        <item name="android:textSize">30dp</item>
+        <item name="fontFamily">@font/alata</item>
+        <item name="android:textStyle">bold</item>
+        <item name="color">@color/black</item>
+    </style>
+
 </resources>

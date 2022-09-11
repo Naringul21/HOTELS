@@ -35,13 +35,13 @@ class FirebaseInstanceRepository() {
         FirebaseFirestore.getInstance().collection("hotelList_seeAll_fragments").get().addOnSuccessListener {
             val listData: MutableList<Hotels> = mutableListOf<Hotels>()
             for (document:QueryDocumentSnapshot in it){
-                val image: String?=document.getString("image")
-                val location: String?=document.getString("infoLocation")
-                val name: String?=document.getString("name")
-                val price: String?=document.getString("price")
-                val room: String?=document.getString("infoRoom")
-                val meal: String?=document.getString("infoMeal")
-//                val rating: Int? =document.getLong("rating")
+                val image: String=document.getString("image") ?: ""
+                val location: String=document.getString("infoLocation") ?: ""
+                val name: String=document.getString("name") ?: ""
+                val price: String=document.getString("price") ?: ""
+                val room: String=document.getString("infoRoom") ?: ""
+                val meal: String=document.getString("infoMeal") ?: ""
+//                val rating: Int? =document.g("rating")
                 val hotels=Hotels(name, location, image, price, meal, room)
                 listData.add(hotels)
             }

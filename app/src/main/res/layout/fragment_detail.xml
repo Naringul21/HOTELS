@@ -2,43 +2,41 @@
 <androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/fragment_details"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layoutDescription="@xml/fragment_hotel_details_scene"
-    tools:context=".HOTELS.presentation.ui.fragments.HotelDetailsFragment">
-
+    android:layout_height="1500dp"
+    app:layoutDescription="@xml/fragment_detail_scene"
+    tools:context=".HOTELS.presentation.ui.fragments.DetailFragment">
 
     <ImageView
-        android:id="@+id/imageDetail"
+        android:id="@+id/detail_image"
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:src="@mipmap/login_new_foreground"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
-        android:id="@+id/nameDetails"
-        style="@style/text_style"
+        android:id="@+id/detail_name"
+        style="@style/text_style_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:textSize="20sp"
+        android:layout_marginTop="5dp"
+        android:text="name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageDetail" />
+        app:layout_constraintTop_toBottomOf="@id/detail_image" />
+
 
     <TextView
         android:id="@+id/priceDetails"
-        style="@style/text_style"
+        style="@style/text_style_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        android:text="gfgfgfgfg"
-        android:textSize="25dp"
+        android:text="123"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageDetail" />
+        app:layout_constraintTop_toBottomOf="@id/detail_image" />
 
     <TextView
         android:id="@+id/textView"
@@ -46,32 +44,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="10dp"
         android:text="Per night"
-        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/priceDetails" />
 
     <TextView
-        android:id="@+id/info_hotelDetails"
+        android:id="@+id/info_Details"
         style="@style/text_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
         android:text="2 Guest  1 Bedroom  1 Bath"
-        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameDetails" />
+        app:layout_constraintTop_toBottomOf="@+id/detail_name" />
 
     <ImageView
         android:id="@+id/rating1"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
         android:src="@drawable/ic_baseline_star_rate_24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/info_hotelDetails" />
+        app:layout_constraintTop_toBottomOf="@id/info_Details" />
 
 
     <ImageView
@@ -79,9 +76,10 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="35dp"
+        android:layout_marginTop="5dp"
         android:src="@drawable/ic_baseline_star_rate_24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/info_hotelDetails" />
+        app:layout_constraintTop_toBottomOf="@id/info_Details" />
 
 
     <ImageView
@@ -89,9 +87,10 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="60dp"
+        android:layout_marginTop="5dp"
         android:src="@drawable/ic_baseline_star_rate_24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/info_hotelDetails" />
+        app:layout_constraintTop_toBottomOf="@id/info_Details" />
 
 
     <ImageView
@@ -99,9 +98,10 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="85dp"
+        android:layout_marginTop="5dp"
         android:src="@drawable/ic_baseline_star_rate_24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/info_hotelDetails" />
+        app:layout_constraintTop_toBottomOf="@id/info_Details" />
 
 
     <ImageView
@@ -109,9 +109,10 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="110dp"
+        android:layout_marginTop="5dp"
         android:src="@drawable/ic_baseline_star_rate_24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/info_hotelDetails" />
+        app:layout_constraintTop_toBottomOf="@id/info_Details" />
 
     <TextView
         android:id="@+id/describtion"
@@ -121,7 +122,6 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
         android:text="hbhhghghjghghghghgh"
-        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/rating1" />
 
@@ -133,7 +133,7 @@
         android:layout_marginTop="15dp"
         android:src="@drawable/ic_baseline_pool_24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rating1" />
+        app:layout_constraintTop_toBottomOf="@id/describtion" />
 
     <TextView
         android:id="@+id/textView2"
@@ -145,7 +145,7 @@
         android:text="@string/swimming_pool"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@id/image_pool"
-        app:layout_constraintTop_toBottomOf="@+id/max_info_hotelDetails" />
+        app:layout_constraintTop_toBottomOf="@+id/describtion" />
 
     <ImageView
         android:id="@+id/image_breakfast"
@@ -177,7 +177,7 @@
         android:layout_marginTop="15dp"
         android:src="@drawable/ic_baseline_spa_24"
         app:layout_constraintEnd_toStartOf="@id/text_spa"
-        app:layout_constraintTop_toBottomOf="@id/max_info_hotelDetails" />
+        app:layout_constraintTop_toBottomOf="@id/describtion" />
 
     <TextView
         android:id="@+id/text_spa"
@@ -189,7 +189,7 @@
         android:text="@string/spa"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/max_info_hotelDetails" />
+        app:layout_constraintTop_toBottomOf="@+id/describtion" />
 
     <ImageView
         android:id="@+id/image_bar"
@@ -256,6 +256,61 @@
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@id/image_parking"
         app:layout_constraintTop_toBottomOf="@+id/image_wifi" />
+
+    <TextView
+        android:id="@+id/text_checkin"
+        style="@style/text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Check-in: 14:00"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_parking" />
+
+
+    <TextView
+        android:id="@+id/text_checkout"
+        style="@style/text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="Check-out: 12:00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_parking" />
+
+    <TextView
+        android:id="@+id/priceDetails2"
+        style="@style/text_style_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="123"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_checkin" />
+
+    <TextView
+        android:id="@+id/priceinfo"
+        style="@style/text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:text="for 1 room/1 night"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/priceDetails2" />
+
+    <Button
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/toolbar_background3"
+        android:text="See aviability"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_checkout" />
 
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

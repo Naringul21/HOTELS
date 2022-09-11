@@ -14,7 +14,10 @@
     <string name="quba_palace_hotel_info">The room consists of living room and bedroom, single and double rooms are provided on client’s choice. There is a mini bar, tea and coffee set, LCD-TV, Wi-Fi. Also, in each room there is a balcony, from which the proximity of the mountain scenery can be felt brighter</string>
     <string name="free_wifi">Free WiFi</string>
     <string name="spa">Spa</string>
-    <style name="TestStyleWithLineHeight.">17dp</style> <string name="wrong_email_password">Wrong email password</string>
+
+    <style name="TestStyleWithLineHeight.">17dp</style>
+
+    <string name="wrong_email_password">Wrong email password</string>
     <string name="breakfast">Wonderful Breakfast</string>
     <string name="bar">Bar</string>
     <string name="parking">Free Parking</string>

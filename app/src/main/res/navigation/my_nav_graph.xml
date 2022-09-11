@@ -11,6 +11,10 @@
         android:label="fragment_on_boarding"
         tools:layout="@layout/fragment_on_boarding" >
         <action
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"
             android:id="@+id/action_onBoardingFragment_to_secondFragment"
             app:destination="@id/seeAllFragment" />
     </fragment>
@@ -20,6 +24,10 @@
         android:label="fragment_first"
         tools:layout="@layout/fragment_home" >
         <action
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"
             android:id="@+id/action_homeFragment_to_secondFragment"
             app:destination="@id/seeAllFragment" />
     </fragment>
@@ -27,16 +35,32 @@
         android:id="@+id/seeAllFragment"
         android:name="com.example.hotels.HOTELS.presentation.ui.SeeAllFragment.SeeAllFragment"
         android:label="fragment_seeAll"
-        tools:layout="@layout/fragment_see_all" />
+        tools:layout="@layout/fragment_see_all" >
+        <action
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"
+            android:id="@+id/action_seeAllFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/logInFragment"
         android:name="com.example.hotels.HOTELS.presentation.ui.LogInFragment.LogInFragment"
         android:label="fragment_log_in"
         tools:layout="@layout/fragment_log_in" >
         <action
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"
             android:id="@+id/action_logInFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
         <action
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"
             android:id="@+id/action_logInFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
@@ -46,7 +70,16 @@
         android:label="SignUpFragment"
         tools:layout="@layout/fragment_sign_up">
         <action
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"
             android:id="@+id/action_signUpFragment2_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.hotels.HOTELS.presentation.ui.fragments.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
 </navigation>

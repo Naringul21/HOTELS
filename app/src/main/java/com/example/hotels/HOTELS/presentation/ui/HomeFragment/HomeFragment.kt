@@ -15,6 +15,7 @@ import com.example.hotels.HOTELS.presentation.adapter.RvHomeFragmentAdapter
 import com.example.hotels.HOTELS.presentation.adapter.RvLatestSearchAdapter
 import com.example.hotels.R
 import com.google.firebase.firestore.*
+import com.google.firebase.firestore.model.Document
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment(R.layout.fragment_home), View.OnClickListener {
@@ -22,7 +23,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), View.OnClickListener {
     private lateinit var hotelArrayList: ArrayList<Hotels>
     private lateinit var homeFragmentAdapter: RvHomeFragmentAdapter
     lateinit var latestSearchAdapter: RvLatestSearchAdapter
-    lateinit var db: FirebaseFirestore
+    lateinit var name: Array<String>
 
     private val viewModel by lazy { ViewModelProviders.of(this)[HomeViewModel::class.java] }
 
@@ -65,55 +66,6 @@ class HomeFragment : Fragment(R.layout.fragment_home), View.OnClickListener {
         }
     }
 
+
+
 }
-
-
-//        rv_hotel_list_home_seeAll.layoutManager = LinearLayoutManager(activity)
-//        rv_hotel_list_home_seeAll.setHasFixedSize(true)
-//        hotelArrayList = arrayListOf()
-//        HomeFragmentAdapter = rvHomeFragmentAdapter(hotelArrayList)
-//        EventChangeListener2()
-//        rv_hotel_list_home_seeAll.adapter = HomeFragmentAdapter
-//
-//
-//    }
-
-//    private fun EventChangeListener() {
-//        db = FirebaseFirestore.getInstance()
-//        db.collection("hotels").orderBy("name", Query.Direction.ASCENDING)
-//            .addSnapshotListener(object : EventListener<QuerySnapshot> {
-//                override fun onEvent(value: QuerySnapshot?, error: FirebaseFirestoreException?) {
-//                    if (error != null) {
-//                        Log.e("FireStrore Error", error.message.toString())
-//                        return
-//                    }
-//                    for (dc: DocumentChange in value?.documentChanges!!) {
-//                        if (dc.type == DocumentChange.Type.ADDED) {
-//                            hotelArrayList.add(dc.document.toObject(Hotels::class.java))
-//                        }
-//                    }
-//                    latestSearchAdapter.notifyDataSetChanged()
-//                }
-//            })
-//
-//    }
-//
-//    private fun EventChangeListener2() {
-//        db = FirebaseFirestore.getInstance()
-//        db.collection("hotel_home_fragment").orderBy("name", Query.Direction.ASCENDING)
-//            .addSnapshotListener(object : EventListener<QuerySnapshot> {
-//                override fun onEvent(value: QuerySnapshot?, error: FirebaseFirestoreException?) {
-//                    if (error != null) {
-//                        Log.e("FireStrore Error", error.message.toString())
-//                        return
-//                    }
-//                    for (dc: DocumentChange in value?.documentChanges!!) {
-//                        if (dc.type == DocumentChange.Type.ADDED) {
-//                            hotelArrayList.add(dc.document.toObject(Hotels::class.java))
-//                        }
-//                    }
-//                    HomeFragmentAdapter.notifyDataSetChanged()
-//                }
-//            })
-//
-//    }

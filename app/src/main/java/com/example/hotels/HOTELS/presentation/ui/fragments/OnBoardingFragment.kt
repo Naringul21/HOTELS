@@ -25,6 +25,7 @@ class OnBoardingFragment : Fragment() {
 
         val fragmentList = listOf<Fragment>(
             SeeAllFragment(),
+            DetailFragment(),
             HomeFragment(),
             LogInFragment(),
             SignUpFragment(),

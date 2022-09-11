@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hotels.HOTELS.data.db.Hotels
+import com.example.hotels.HOTELS.utils.Navigator
 import com.example.hotels.R
 import com.squareup.picasso.Picasso
 
@@ -74,7 +75,9 @@ class RvHomeFragmentAdapter() :RecyclerView.Adapter<RvHomeFragmentAdapter.MyView
             location.text=hotel2.location
             price.text=hotel2.price
             Picasso.get().load(hotel2.image).into(image)
+
         }
+
     }
 
     override fun getItemCount(): Int {
@@ -82,7 +85,18 @@ class RvHomeFragmentAdapter() :RecyclerView.Adapter<RvHomeFragmentAdapter.MyView
     }
 }
 
-class RvSeeAllListAdapter() :RecyclerView.Adapter<RvSeeAllListAdapter.MyViewHolder>(){
+
+
+
+
+
+
+
+
+
+
+
+class RvSeeAllListAdapter(val navigator: Navigator) :RecyclerView.Adapter<RvSeeAllListAdapter.MyViewHolder>(){
     fun setListData(data: MutableList<Hotels>){
         dataList=data
 
@@ -92,6 +106,13 @@ class RvSeeAllListAdapter() :RecyclerView.Adapter<RvSeeAllListAdapter.MyViewHold
         var location: TextView =itemView.findViewById(R.id.hotelLocation_seeAll)
         var image: ImageView =itemView.findViewById(R.id.hotel_image_seeAll)
         val price: TextView=itemView.findViewById(R.id.hotelPrice_seeAll)
+        fun setOnClick(hotels: Hotels){
+            image.setOnClickListener {
+                navigator.navigate(hotels)
+
+            }
+        }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -109,6 +130,7 @@ class RvSeeAllListAdapter() :RecyclerView.Adapter<RvSeeAllListAdapter.MyViewHold
             price.text=hotel.price
             Picasso.get().load(hotel.image).into(image)
         }
+        holder.setOnClick(hotel)
     }
 
     override fun getItemCount(): Int {
