@@ -1,21 +1,17 @@
-package com.example.hotels.HOTELS.presentation.ui.HomeFragment
+package com.example.hotels.HOTELS.presentation.ui.home_fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
-import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hotels.HOTELS.data.db.Hotels
+import com.example.hotels.HOTELS.data.models.Hotels
 import com.example.hotels.HOTELS.presentation.adapter.RvHomeFragmentAdapter
 import com.example.hotels.HOTELS.presentation.adapter.RvLatestSearchAdapter
 import com.example.hotels.R
-import com.google.firebase.firestore.*
-import com.google.firebase.firestore.model.Document
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment(R.layout.fragment_home), View.OnClickListener {

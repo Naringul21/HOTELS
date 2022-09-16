@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".HOTELS.presentation.ui.HomeFragment.HomeFragment"
+    tools:context=".HOTELS.presentation.ui.home_fragment.HomeFragment"
     android:layout_marginHorizontal="10dp"
     android:layout_marginVertical="10dp">
 
@@ -40,7 +40,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="210dp"
         android:id="@+id/rv_latest_searching_hotel"
         app:layout_constraintTop_toBottomOf="@+id/text_latest_searching"
         app:layout_constraintBottom_toBottomOf="@id/text_see_all"/>

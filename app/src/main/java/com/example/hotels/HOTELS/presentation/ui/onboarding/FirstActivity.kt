@@ -1,4 +1,4 @@
-package com.example.hotels.HOTELS.presentation.ui
+package com.example.hotels.HOTELS.presentation.ui.onboarding
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

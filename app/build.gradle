@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
     id 'com.google.gms.google-services'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 
 }
 
@@ -44,6 +45,7 @@ android {
 dependencies {
     //dependency injection
     implementation 'com.google.dagger:hilt-android:2.43.2'
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
     kapt 'com.google.dagger:hilt-compiler:2.43.2'
 
     implementation 'com.google.android.datatransport:transport-runtime:3.0.1'

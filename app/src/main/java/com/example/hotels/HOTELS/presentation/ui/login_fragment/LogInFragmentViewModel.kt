@@ -1,4 +1,4 @@
-package com.example.hotels.HOTELS.presentation.ui.LogInFragment
+package com.example.hotels.HOTELS.presentation.ui.login_fragment
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -1,4 +1,4 @@
-package com.example.hotels.HOTELS.presentation.ui.SeeAllFragment
+package com.example.hotels.HOTELS.presentation.ui.see_all_fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.hotels.HOTELS.data.db.Hotels
+import androidx.recyclerview.widget.RecyclerView
+import com.example.hotels.HOTELS.data.models.Hotels
 import com.example.hotels.HOTELS.presentation.adapter.RvSeeAllListAdapter
 import com.example.hotels.HOTELS.utils.Navigator
 import com.example.hotels.R
@@ -15,7 +16,7 @@ import kotlinx.android.synthetic.main.fragment_see_all.*
 
 
 class SeeAllFragment : Fragment(R.layout.fragment_see_all), Navigator {
-
+    private lateinit var  recyclerView: RecyclerView
     private lateinit var hotelArrayList: ArrayList<Hotels>
     private lateinit var seeAllListAdapter: RvSeeAllListAdapter
 
@@ -36,6 +37,7 @@ class SeeAllFragment : Fragment(R.layout.fragment_see_all), Navigator {
             seeAllListAdapter.setListData(it)
             rv_see_all_hotels.adapter = seeAllListAdapter
             seeAllListAdapter.notifyDataSetChanged()
+
         })
 
     }
@@ -43,7 +45,7 @@ class SeeAllFragment : Fragment(R.layout.fragment_see_all), Navigator {
     override fun navigate(hotels: Hotels) {
         val bundle=Bundle()
         bundle.putSerializable("hotel", hotels)
-        findNavController().navigate(R.id.detailFragment,bundle)
+        findNavController().navigate(R.id.fragment_hotel_details,bundle)
     }
 
 }

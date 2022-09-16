@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/drawable/button_payment.xml" value="0.169" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/drawable/button_style.xml" value="0.1335" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/drawable/edit_background.xml" value="0.1335" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/drawable/toolbar_background.xml" value="0.1335" />
@@ -10,21 +11,21 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/activity_splash_screen.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/first_activity_layout.xml" value="0.2" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_detail.xml" value="0.176" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_detail.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_details2.xml" value="0.2341485507246377" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_first.xml" value="0.264" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_home.xml" value="0.4" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_home.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_hotel_details.xml" value="0.2" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_log_in.xml" value="0.2" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_log_in.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_on_boarding.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_quba_palace_hotel.xml" value="0.152" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_quba_palace_hotell.xml" value="0.264" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_see_all.xml" value="0.136" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_see_all.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_sign_in.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_sign_up.xml" value="0.14351851851851852" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/hotel_details.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/rv_items_home_fragment.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/rv_latest_search_items.xml" value="0.4" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/rv_see_all_list_items.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_sign_up.xml" value="0.264" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/hotel_details.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/hotel_details_.xml" value="0.12135416666666667" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/rv_items_home_fragment.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/rv_latest_search_items.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/rv_see_all_list_items.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/splash_screen.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/splash_screen_activity.xml" value="0.264" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/menu/bottom_menu.xml" value="0.25416666666666665" />

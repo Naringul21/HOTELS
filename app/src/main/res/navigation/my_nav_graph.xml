@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/onBoardingFragment"
-        android:name="com.example.hotels.HOTELS.presentation.ui.fragments.OnBoardingFragment"
+        android:name="com.example.hotels.HOTELS.presentation.ui.onboarding.OnBoardingFragment"
         android:label="fragment_on_boarding"
         tools:layout="@layout/fragment_on_boarding" >
         <action
@@ -15,12 +15,12 @@
             app:exitAnim="@anim/slide_out"
             app:popEnterAnim="@anim/slide_in"
             app:popExitAnim="@anim/slide_out"
-            android:id="@+id/action_onBoardingFragment_to_secondFragment"
+            android:id="@+id/action_onBoardingFragment_to_seeAllFragment"
             app:destination="@id/seeAllFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.hotels.HOTELS.presentation.ui.HomeFragment.HomeFragment"
+        android:name="com.example.hotels.HOTELS.presentation.ui.home_fragment.HomeFragment"
         android:label="fragment_first"
         tools:layout="@layout/fragment_home" >
         <action
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/seeAllFragment"
-        android:name="com.example.hotels.HOTELS.presentation.ui.SeeAllFragment.SeeAllFragment"
+        android:name="com.example.hotels.HOTELS.presentation.ui.see_all_fragment.SeeAllFragment"
         android:label="fragment_seeAll"
         tools:layout="@layout/fragment_see_all" >
         <action
@@ -42,11 +42,14 @@
             app:popEnterAnim="@anim/slide_in"
             app:popExitAnim="@anim/slide_out"
             android:id="@+id/action_seeAllFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
+            app:destination="@id/fragment_hotel_details" />
+        <action
+            android:id="@+id/action_seeAllFragment_to_hotelDetailsFragment"
+            app:destination="@id/fragment_hotel_details" />
     </fragment>
     <fragment
         android:id="@+id/logInFragment"
-        android:name="com.example.hotels.HOTELS.presentation.ui.LogInFragment.LogInFragment"
+        android:name="com.example.hotels.HOTELS.presentation.ui.login_fragment.LogInFragment"
         android:label="fragment_log_in"
         tools:layout="@layout/fragment_log_in" >
         <action
@@ -77,9 +80,17 @@
             android:id="@+id/action_signUpFragment2_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
+
+<!--    <fragment-->
+<!--        android:id="@+id/fragment_hotel_details"-->
+<!--        android:name="com.example.hotels.HOTELS.presentation.ui.detail_fragment.DetailFragment"-->
+<!--        android:label="fragment_hotel_details"-->
+<!--        tools:layout="@layout/fragment_hotel_details" />-->
     <fragment
-        android:id="@+id/detailFragment"
-        android:name="com.example.hotels.HOTELS.presentation.ui.fragments.DetailFragment"
-        android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        android:id="@+id/fragment_hotel_details"
+        android:name="com.example.hotels.HOTELS.presentation.ui.detail_fragment.DetailFragment"
+        android:label="fragment_hotel_details"
+        tools:layout="@layout/fragment_hotel_details" />
+
+
 </navigation>

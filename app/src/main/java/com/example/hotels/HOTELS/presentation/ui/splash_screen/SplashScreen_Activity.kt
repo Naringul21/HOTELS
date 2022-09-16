@@ -1,10 +1,11 @@
-package com.example.hotels.HOTELS.presentation.ui
+package com.example.hotels.HOTELS.presentation.ui.splash_screen
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import com.example.hotels.HOTELS.presentation.ui.onboarding.FirstActivity
 import com.example.hotels.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.splash_screen_activity.*

@@ -1,4 +1,4 @@
-package com.example.hotels.HOTELS.data.db
+package com.example.hotels.HOTELS.data.models
 
 import java.io.Serializable
 
@@ -9,5 +9,6 @@ data class Hotels(
     val price: String="",
     val meal: String="",
     val room: String="",
-    val rating: Int=1
+    val rating: Int=1,
+    val description: String=""
 ):Serializable

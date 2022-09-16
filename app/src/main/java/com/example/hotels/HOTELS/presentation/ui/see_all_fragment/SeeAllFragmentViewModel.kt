@@ -1,9 +1,9 @@
-package com.example.hotels.HOTELS.presentation.ui.SeeAllFragment
+package com.example.hotels.HOTELS.presentation.ui.see_all_fragment
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.hotels.HOTELS.data.db.Hotels
+import com.example.hotels.HOTELS.data.models.Hotels
 import com.example.hotels.HOTELS.domain.repositorys.FirebaseInstanceRepository
 
 class SeeAllFragmentViewModel:ViewModel() {

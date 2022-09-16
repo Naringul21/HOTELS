@@ -4,7 +4,7 @@ import android.content.ContentValues
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.hotels.HOTELS.data.db.Hotels
+import com.example.hotels.HOTELS.data.models.Hotels
 import com.example.hotels.HOTELS.data.models.FirebaseUserModel
 import com.example.hotels.HOTELS.utils.Constants.COLLECTION_PATH
 import com.example.hotels.HOTELS.utils.Constants.E_MAIL
@@ -41,8 +41,9 @@ class FirebaseInstanceRepository() {
                 val price: String=document.getString("price") ?: ""
                 val room: String=document.getString("infoRoom") ?: ""
                 val meal: String=document.getString("infoMeal") ?: ""
+                val description: String=document.getString("description") ?: ""
 //                val rating: Int? =document.g("rating")
-                val hotels=Hotels(name, location, image, price, meal, room)
+                val hotels= Hotels(name, location, image, price, meal, room)
                 listData.add(hotels)
             }
             mutableData.value=listData
