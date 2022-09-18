@@ -12,9 +12,7 @@ import com.example.hotels.R
 import com.example.hotels.databinding.FragmentLogInBinding
 import kotlinx.android.synthetic.main.fragment_log_in.*
 
-class LogInFragment : Fragment(R.layout.fragment_log_in) {
-
-
+class LogInFragment : Fragment(R.layout.fragment_log_in), View.OnClickListener {
     private var _binding: FragmentLogInBinding? = null
     private val binding :FragmentLogInBinding get() = _binding!!
 
@@ -56,5 +54,11 @@ class LogInFragment : Fragment(R.layout.fragment_log_in) {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onClick(p0: View?) {
+        when(p0){
+            text_button_signUp
+        }
     }
 }

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="map_api_key" templateMergeSrategy="preserve" translatable="false">AIzaSyBGG-6KSaEW_1jqILSToV_6kd9pFn1Q-Os</string>
+</resources>

@@ -11,6 +11,6 @@ object Constants {
     const val NICKNAME = "nickname"
     const val PASSWORD = "password"
     const val FULLNAME = "fullname"
-   const val MAPS_API_KEY=""
+   const val MAPS_API_KEY="AIzaSyBGG-6KSaEW_1jqILSToV_6kd9pFn1Q-Os"
 
 }

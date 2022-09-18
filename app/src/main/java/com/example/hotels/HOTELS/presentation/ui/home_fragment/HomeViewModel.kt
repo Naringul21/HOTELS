@@ -15,5 +15,8 @@ class HomeViewModel() : ViewModel() {
         }
         return mutableData
     }
+//    fun getfavouriteList(hotels: Hotels){
+//        muta
+//
+    }
 
-}

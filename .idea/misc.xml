@@ -6,6 +6,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/drawable/button_payment.xml" value="0.169" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/drawable/button_style.xml" value="0.1335" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/drawable/edit_background.xml" value="0.1335" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/drawable/map_api_key.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/drawable/toolbar_background.xml" value="0.1335" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/font/my_font.xml" value="0.28" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
@@ -20,7 +21,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_on_boarding.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_see_all.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_sign_in.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_sign_up.xml" value="0.264" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/fragment_sign_up.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/hotel_details.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/hotel_details_.xml" value="0.12135416666666667" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/layout/rv_items_home_fragment.xml" value="0.1" />

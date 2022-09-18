@@ -43,7 +43,12 @@ class HomeFragment : Fragment(R.layout.fragment_home), View.OnClickListener {
             rv_hotel_list_home_seeAll.adapter = homeFragmentAdapter
             homeFragmentAdapter.notifyDataSetChanged()
         })
+
+
         viewModel.fetchData().observe(viewLifecycleOwner, Observer {
+            it.filter {
+                it.lat==45.0
+            }
             rv_latest_searching_hotel.layoutManager=LinearLayoutManager(activity, RecyclerView.HORIZONTAL, false)
             rv_latest_searching_hotel.setHasFixedSize(true)
             latestSearchAdapter= RvLatestSearchAdapter()

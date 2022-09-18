@@ -44,32 +44,6 @@
         android:layout_marginTop="10dp"
         />
 
-    <Button
-        android:layout_width="140dp"
-        android:layout_height="40dp"
-        android:id="@+id/button_loginGoogle"
-        android:background="@drawable/edit_background"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_info2"
-        android:text="with Google"
-        android:textColor="@color/text_with_color"
-        android:layout_marginTop="40dp"
-        android:layout_marginStart="10dp"
-        />
-
-    <Button
-        android:layout_width="140dp"
-        android:layout_height="40dp"
-        android:id="@+id/button_loginFacebook"
-        android:background="@drawable/edit_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_info2"
-        android:text="with Facebook"
-        android:textColor="@color/text_with_color"
-        android:layout_marginTop="40dp"
-
-        />
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/emailInputLayoutLogin"
             android:layout_width="match_parent"
@@ -79,7 +53,7 @@
             app:boxStrokeColor="@color/toolbar_background3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_loginGoogle">
+            app:layout_constraintTop_toBottomOf="@+id/text_info2">
 
 
             <com.google.android.material.textfield.TextInputEditText
@@ -117,14 +91,40 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:id="@+id/text_account_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Don't have an account?"
+        style="@style/text_style"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="90dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/passwordInputLayoutLogin"/>
+
+    <TextView
+        android:id="@+id/text_button_signUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        style="@style/text_style"
+        android:layout_marginTop="7dp"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/toolbar_background3"
+        app:layout_constraintStart_toEndOf="@id/text_account_info"
+        app:layout_constraintTop_toBottomOf="@id/passwordInputLayoutLogin"/>
+
         <Button
             android:id="@+id/signInButton"
             android:layout_width="200dp"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:background="@drawable/toolbar_background"
             android:text="Continue"
             android:textColor="@color/white"
             android:textStyle="bold"
+            android:layout_marginBottom="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

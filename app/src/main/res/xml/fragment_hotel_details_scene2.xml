@@ -9,9 +9,9 @@
         motion:duration="1000">
 
         <OnSwipe
-            motion:touchAnchorId="@+id/button"
-            motion:touchAnchorSide="right"
-            motion:dragDirection="dragRight" />
+            motion:touchAnchorId="@+id/imageDetail"
+            motion:touchAnchorSide="top"
+            motion:dragDirection="dragUp" />
        <KeyFrameSet>
        </KeyFrameSet>
     </Transition>
@@ -136,6 +136,7 @@
             android:layout_height="150dp"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
             motion:layout_constraintTop_toBottomOf="@id/description" />
 
 
@@ -447,6 +448,7 @@
             android:id="@+id/map"
             android:layout_width="300dp"
             android:layout_height="150dp"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintTop_toBottomOf="@id/description" />

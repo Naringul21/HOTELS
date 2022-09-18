@@ -124,7 +124,8 @@
         android:layout_height="150dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/description"/>
+        app:layout_constraintTop_toBottomOf="@id/description"
+        android:name="com.google.android.gms.maps.SupportMapFragment"/>
 
     <ImageView
         android:id="@+id/image_breakfast"

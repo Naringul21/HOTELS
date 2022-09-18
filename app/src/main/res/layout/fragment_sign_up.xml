@@ -38,30 +38,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_Signup" />
 
-    <Button
-        android:id="@+id/button_withGoogle"
-        android:layout_width="140dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/edit_background"
-        android:text="with Google"
-        android:textColor="@color/text_with_color"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_info1" />
-
-    <Button
-        android:id="@+id/button_withFacebook"
-        android:layout_width="140dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/edit_background"
-        android:text="with Facebook"
-        android:textColor="@color/text_with_color"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_info1"
-
-        />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/fullNameInputLayout"
@@ -72,7 +48,7 @@
         app:boxStrokeColor="@color/toolbar_background3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_withGoogle">
+        app:layout_constraintTop_toBottomOf="@id/text_info1">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_fullName"
@@ -143,7 +119,8 @@
         android:text="Continue"
         android:textColor="@color/white"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

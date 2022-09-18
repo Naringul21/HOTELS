@@ -42,6 +42,8 @@ class FirebaseInstanceRepository() {
                 val room: String=document.getString("infoRoom") ?: ""
                 val meal: String=document.getString("infoMeal") ?: ""
                 val description: String=document.getString("description") ?: ""
+                val lat: Double =document.getDouble("lat")?:0.0
+                val lng: Double =document.getDouble("lng")?:0.0
 //                val rating: Int? =document.g("rating")
                 val hotels= Hotels(name, location, image, price, meal, room)
                 listData.add(hotels)
