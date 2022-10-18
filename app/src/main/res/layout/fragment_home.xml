@@ -17,16 +17,12 @@
 
         <fragment
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/text_latest_searching"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="match_parent"
             app:navGraph="@navigation/ads_nav_graph"
             app:defaultNavHost="true"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:id="@+id/containerAds"/>
     </FrameLayout>
-
 
     <TextView
         android:id="@+id/text_latest_searching"
@@ -36,34 +32,31 @@
         android:text="LATEST SEARCHING"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fr_layout_ads"
-        android:layout_marginTop="60dp" />
+        android:layout_marginTop="30dp" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="210dp"
         android:id="@+id/rv_latest_searching_hotel"
-        app:layout_constraintTop_toBottomOf="@+id/text_latest_searching"
-        app:layout_constraintBottom_toBottomOf="@id/text_see_all"/>
+        app:layout_constraintTop_toBottomOf="@+id/text_latest_searching" />
 
     <TextView
         android:id="@+id/text_see_all"
         style="@style/text_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
         android:text="See All"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rv_latest_searching_hotel"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="30dp"
         />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_see_all"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginTop="15dp"
         android:id="@+id/rv_hotel_list_home_seeAll"/>
 
 

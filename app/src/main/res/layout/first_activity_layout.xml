@@ -4,16 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HOTELS.presentation.ui.onboarding.FirstActivity">
-
-<!--    <com.google.android.material.appbar.AppBarLayout-->
-<!--        android:id="@+id/appbar"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:background="@color/fui_transparent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent">-->
+    tools:context=".presentation.ui.activity.FirstActivity">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -27,7 +18,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/dm_serif_display"
-                android:text="Logo"
+                android:text="Hotels"
                 android:textColor="@color/white"
                 android:textSize="30sp" />
 
@@ -43,9 +34,9 @@
                 android:layout_width="25dp"
                 android:layout_height="28dp"
                 android:layout_marginStart="15dp"
-                android:src="@mipmap/menu1_image_foreground" />
+                android:src="@mipmap/menu1_image_foreground"
+                tools:ignore="TouchTargetSizeCheck" />
         </androidx.appcompat.widget.Toolbar>
-<!--    </com.google.android.material.appbar.AppBarLayout>-->
 
     <fragment
         android:id="@+id/container"

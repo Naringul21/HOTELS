@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".HOTELS.presentation.ui.AdsFragment"
+    android:background="@color/red">
+
+
+    <ImageView
+        android:id="@+id/hotel_ads"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:src="@mipmap/hotel_ads1_foreground"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stay 2 night or more and"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@id/hotel_ads"
+        style="@style/text_style"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAVE"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@id/hotel_ads"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/text_style_1"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        app:layout_constraintTop_toBottomOf="@id/text1"/>
+
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20 %"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@id/hotel_ads"
+        style="@style/text_style_1"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text2"/>
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Basqal
+         Resort and Spa"
+        app:layout_constraintStart_toEndOf="@id/hotel_ads"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="18sp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

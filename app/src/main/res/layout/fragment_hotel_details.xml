@@ -40,7 +40,6 @@
         style="@style/text_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:text="Per night"
         android:textSize="18sp"
@@ -53,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:text="2 Guest  1 Bedroom  1 Bath"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -107,8 +106,7 @@
         app:layout_constraintTop_toBottomOf="@id/info_hotelDetails" />
 
     <TextView
-        android:id="@+id/description"
-        style="@style/text_style"
+        android:id="@+id/description_hotel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -139,7 +137,6 @@
 
     <TextView
         android:id="@+id/text_breakfast"
-        style="@style/text_style"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="@string/breakfast"
@@ -273,7 +270,7 @@
         app:layout_constraintTop_toBottomOf="@id/view1" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/paymentButton"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
@@ -288,7 +285,7 @@
 
     <TextView
         android:id="@+id/priceDetails2"
-        style="@style/text_style_1"
+        style="@style/text_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -300,7 +297,7 @@
         android:id="@+id/info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="25dp"
         android:text="for 1 room/1 night"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -308,11 +305,10 @@
 
     <TextView
         android:id="@+id/info2"
-        style="@style/text_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginStart="26dp"
+        android:textSize="18sp"
         android:text="Breakfast included"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/info" />

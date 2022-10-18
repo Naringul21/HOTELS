@@ -26,7 +26,7 @@
 
     <TextView
         android:id="@+id/hotelName_homeFr"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
@@ -36,26 +36,38 @@
         app:layout_constraintStart_toEndOf="@id/hotel_image_homeFr"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <RatingBar
+        android:id="@+id/rBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:stepSize="0.5"
+        android:isIndicator="false"
+        app:layout_constraintStart_toEndOf="@+id/hotel_image_homeFr"
+        app:layout_constraintTop_toBottomOf="@id/hotelName_homeFr"
+        android:numStars="5"
+        style="?android:attr/ratingBarStyleIndicator"
+        android:progressTint="#FFCC01"/>
+
     <ImageView
         android:id="@+id/locationImage_homeFr"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"
         android:src="@drawable/ic_baseline_location_on_24"
         app:layout_constraintStart_toEndOf="@id/hotel_image_homeFr"
-        app:layout_constraintTop_toBottomOf="@id/hotelName_homeFr" />
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 
     <TextView
         android:id="@+id/hotelLocation_homeFr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"
         android:textColor="@color/black"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@id/locationImage_homeFr"
-        app:layout_constraintTop_toBottomOf="@id/hotelName_homeFr" />
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <TextView
         android:id="@+id/hotelPrice_homeFr"
@@ -66,7 +78,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hotelName_homeFr"
         android:layout_marginEnd="15dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

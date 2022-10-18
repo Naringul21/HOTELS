@@ -32,8 +32,9 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:fontFamily="@font/dm_serif_display"
-        android:text="Fill your details or continue with social media"
+        style="@style/text_style"
+        android:textSize="18sp"
+        android:text="Please fill in your details"
         android:textColor="@color/toolbar_background3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_Signup" />
@@ -96,7 +97,8 @@
         app:boxStrokeColor="@color/toolbar_background3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailInputLayout">
+        app:layout_constraintTop_toBottomOf="@+id/emailInputLayout"
+        app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_password"
@@ -112,7 +114,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/signUpButton"
+        android:id="@+id/button_continue_signup"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:background="@drawable/toolbar_background"

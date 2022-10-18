@@ -3,11 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ads_nav_graph"
-    app:startDestination="@id/logInFragment2">
+    app:startDestination="@id/fragmentOnBoardingAds">
 
     <fragment
-        android:id="@+id/logInFragment2"
-        android:name="com.example.hotels.HOTELS.presentation.ui.login_fragment.LogInFragment"
-        android:label="fragment_log_in"
-        tools:layout="@layout/fragment_log_in" />
+        android:id="@+id/adsFragment"
+        android:name="com.example.hotels.HOTELS.presentation.ui.AdsFragment"
+        android:label="fragment_ads"
+        tools:layout="@layout/fragment_ads" />
+    <fragment
+        android:id="@+id/fragmentOnBoardingAds"
+        android:name="com.example.hotels.HOTELS.presentation.ui.onboarding.FragmentOnBoardingAds"
+        android:label="fragment_on_boarding_ads"
+        tools:layout="@layout/fragment_on_boarding_ads" >
+        <action
+            android:id="@+id/action_fragmentOnBoardingAds_to_adsFragment"
+            app:destination="@id/adsFragment" />
+    </fragment>
 </navigation>

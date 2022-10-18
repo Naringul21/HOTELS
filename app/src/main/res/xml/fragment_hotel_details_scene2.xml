@@ -52,7 +52,6 @@
             style="@style/text_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:text="Per night"
             android:textSize="18sp"
@@ -64,7 +63,7 @@
             style="@style/text_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="10dp"
             android:text="2 Guest  1 Bedroom  1 Bath"
             android:textSize="18sp"
@@ -119,8 +118,7 @@
             motion:layout_constraintTop_toBottomOf="@id/info_hotelDetails" />
 
         <Constraint
-            android:id="@+id/description"
-            style="@style/text_style"
+            android:id="@+id/description_hotel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -137,7 +135,7 @@
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"
             android:name="com.google.android.gms.maps.SupportMapFragment"
-            motion:layout_constraintTop_toBottomOf="@id/description" />
+            motion:layout_constraintTop_toBottomOf="@id/description_hotel" />
 
 
         <Constraint
@@ -152,7 +150,6 @@
 
         <Constraint
             android:id="@+id/text_breakfast"
-            style="@style/text_style"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="@string/breakfast"
@@ -173,7 +170,6 @@
 
         <Constraint
             android:id="@+id/text_spa"
-            style="@style/text_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="55dp"
@@ -194,7 +190,6 @@
 
         <Constraint
             android:id="@+id/text_bar"
-            style="@style/text_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
@@ -215,7 +210,6 @@
 
         <Constraint
             android:id="@+id/text_wifi"
-            style="@style/text_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="45dp"
@@ -236,7 +230,6 @@
 
         <Constraint
             android:id="@+id/text_parking"
-            style="@style/text_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="35dp"
@@ -286,7 +279,7 @@
             motion:layout_constraintTop_toBottomOf="@id/view1" />
 
         <Constraint
-            android:id="@+id/button2"
+            android:id="@+id/paymentButton"
             android:layout_width="150dp"
             android:layout_height="60dp"
             android:layout_marginTop="50dp"
@@ -313,7 +306,7 @@
             android:id="@+id/info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="20dp"
             android:text="for 1 room/1 night"
             android:textSize="18sp"
             motion:layout_constraintTop_toBottomOf="@id/priceDetails2"
@@ -321,10 +314,9 @@
 
         <Constraint
             android:id="@+id/info2"
-            style="@style/text_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="20dp"
             android:text="Breakfast included"
             motion:layout_constraintTop_toBottomOf="@id/info"
             motion:layout_constraintStart_toStartOf="parent"/>
@@ -366,7 +358,6 @@
             style="@style/text_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:text="Per night"
             android:textSize="18sp"
@@ -379,7 +370,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:text="2 Guest  1 Bedroom  1 Bath"
             android:textSize="18sp"
             motion:layout_constraintStart_toStartOf="parent"
@@ -433,8 +424,7 @@
             motion:layout_constraintTop_toBottomOf="@id/info_hotelDetails" />
 
         <Constraint
-            android:id="@+id/description"
-            style="@style/text_style"
+            android:id="@+id/description_hotel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -451,7 +441,7 @@
             android:name="com.google.android.gms.maps.SupportMapFragment"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"
-            motion:layout_constraintTop_toBottomOf="@id/description" />
+            motion:layout_constraintTop_toBottomOf="@id/description_hotel" />
 
 
         <Constraint
@@ -466,7 +456,6 @@
 
         <Constraint
             android:id="@+id/text_breakfast"
-            style="@style/text_style"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="@string/breakfast"
@@ -487,7 +476,6 @@
 
         <Constraint
             android:id="@+id/text_spa"
-            style="@style/text_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="55dp"
@@ -508,7 +496,6 @@
 
         <Constraint
             android:id="@+id/text_bar"
-            style="@style/text_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
@@ -529,7 +516,6 @@
 
         <Constraint
             android:id="@+id/text_wifi"
-            style="@style/text_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="45dp"
@@ -550,7 +536,6 @@
 
         <Constraint
             android:id="@+id/text_parking"
-            style="@style/text_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="35dp"
@@ -600,7 +585,7 @@
             motion:layout_constraintTop_toBottomOf="@id/view1" />
 
         <Constraint
-            android:id="@+id/button2"
+            android:id="@+id/paymentButton"
             android:layout_width="150dp"
             android:layout_height="60dp"
             android:layout_marginTop="50dp"
@@ -627,7 +612,7 @@
             android:id="@+id/info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="20dp"
             android:text="for 1 room/1 night"
             android:textSize="18sp"
             motion:layout_constraintTop_toBottomOf="@id/priceDetails2"
@@ -635,10 +620,9 @@
 
         <Constraint
             android:id="@+id/info2"
-            style="@style/text_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="20dp"
             android:text="Breakfast included"
             motion:layout_constraintTop_toBottomOf="@id/info"
             motion:layout_constraintStart_toStartOf="parent"/>

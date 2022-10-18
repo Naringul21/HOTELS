@@ -3,19 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/splash_screen"
-    >
+    android:id="@+id/splash_screen">
 
     <ImageView
-        android:src="@mipmap/splash_image_foreground"
         android:id="@+id/splash_image"
-        android:layout_width="391dp"
-        android:layout_height="391dp"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="50dp" />
-
+        app:layout_constraintEnd_toEndOf="parent"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
