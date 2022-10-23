@@ -22,4 +22,13 @@
         <item name="colorControlActivated">@color/yellow</item>
     </style>
 
+    <style name="button_style" parent="Widget.Material3.Button">
+        <item name="android:backgroundTint">@color/toolbar_background1</item>
+        <item name="android:gradientRadius" >3dp</item>
+
+
+
+
+    </style>
+
 </resources>

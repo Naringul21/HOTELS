@@ -22,6 +22,8 @@
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:background="@drawable/edit_background"
+        android:textAlignment="center"
+        android:textColor="@color/text_with_color"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_contactInfo"
@@ -32,6 +34,7 @@
         android:id="@+id/reg_editEmail"
         android:layout_width="350dp"
         android:layout_height="50dp"
+        android:textAlignment="center"
         android:background="@drawable/edit_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,13 +47,14 @@
         android:id="@+id/reg_numberPre"
         android:layout_width="80dp"
         android:layout_height="50dp"
+        android:textAlignment="center"
         android:background="@drawable/edit_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/reg_editEmail"
         android:layout_marginTop="10dp"
         android:layout_marginStart="30dp"
         android:inputType="numberDecimal"
-        android:hint="+994"/>
+        android:text="+994"/>
 
 
     <EditText
@@ -61,6 +65,7 @@
         app:layout_constraintStart_toEndOf="@id/reg_numberPre"
         app:layout_constraintTop_toBottomOf="@+id/reg_editEmail"
         android:layout_marginTop="10dp"
+        android:textAlignment="center"
        android:layout_marginStart="15dp"
         android:inputType="phone"
         android:hint="*********"/>
@@ -82,6 +87,7 @@
         android:layout_height="50dp"
         android:background="@drawable/edit_background"
         app:layout_constraintStart_toStartOf="parent"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_guestInfo"
         android:layout_marginTop="10dp"
@@ -92,6 +98,7 @@
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:background="@drawable/edit_background"
+        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/reg_firstName"
@@ -125,6 +132,7 @@
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:textAlignment="center"
+        android:drawableBottom="@drawable/down"
         android:background="@drawable/edit_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/reg_checkInText"
@@ -137,12 +145,93 @@
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:textAlignment="center"
+        android:drawableBottom="@drawable/down"
         android:background="@drawable/edit_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/reg_checkOutText"
         android:layout_marginEnd="10dp"
         android:layout_marginTop="10dp"
         style="@style/text_style"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/nextStepButton"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        style="@style/button_style"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/reg_checkOut"
+        android:layout_marginTop="150dp"
+        android:text="Next step"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginEnd="10dp"/>
+
+    <TextView
+        android:id="@+id/reg_adults_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Adults:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reg_checkIn"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"/>
+
+    <Spinner
+        android:id="@+id/spinner_adults"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:spinnerMode="dropdown"
+        android:textAlignment="center"
+       app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/reg_adults_text"
+        android:background="@drawable/edit_background"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/down"
+        app:layout_constraintStart_toStartOf="@id/spinner_adults"
+        app:layout_constraintTop_toBottomOf="@id/reg_adults_text"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="29dp"/>
+
+
+    <TextView
+        android:id="@+id/reg_children_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Children:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reg_checkIn"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"/>
+
+    <Spinner
+        android:id="@+id/spinner_children"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:spinnerMode="dropdown"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/reg_adults_text"
+        android:background="@drawable/edit_background"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="10dp"/>
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/down"
+        app:layout_constraintStart_toStartOf="@id/spinner_children"
+        app:layout_constraintTop_toBottomOf="@id/reg_adults_text"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="29dp"/>
 
 
 

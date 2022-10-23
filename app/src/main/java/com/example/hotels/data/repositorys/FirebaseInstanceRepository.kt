@@ -1,10 +1,7 @@
 package com.example.hotels.HOTELS.domain.repositorys
 
-import android.content.ContentValues
 import android.util.Log
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.hotels.HOTELS.data.models.Hotels
 import com.example.hotels.HOTELS.data.models.FirebaseUserModel
 import com.example.hotels.HOTELS.utils.Constants.COLLECTION_PATH
 import com.example.hotels.HOTELS.utils.Constants.E_MAIL
@@ -16,7 +13,6 @@ import com.example.hotels.HOTELS.utils.Constants.SIGN_IN
 import com.example.hotels.HOTELS.utils.Constants.SIGN_UP
 import com.example.hotels.HOTELS.utils.Constants.SUCCESS
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.*
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.CoroutineScope
@@ -24,7 +20,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class FirebaseInstanceRepository() {
-    val coroutineScope= CoroutineScope(Dispatchers.IO)
+    private val coroutineScope = CoroutineScope(Dispatchers.IO)
     var isSignIn = MutableLiveData<Boolean>()
 
     var isSignUp = MutableLiveData<Boolean>()
@@ -36,18 +32,18 @@ class FirebaseInstanceRepository() {
 
     fun signIn(eMail: String, password: String) {
 
-       coroutineScope.launch {
-           auth.signInWithEmailAndPassword(eMail, password).addOnCompleteListener { task ->
+        coroutineScope.launch {
+            auth.signInWithEmailAndPassword(eMail, password).addOnCompleteListener { task ->
 
-               if (task.isSuccessful) {
-                   isSignIn.postValue(true)
-                   Log.d(SIGN_IN, SUCCESS)
-               } else {
-                   isSignIn.postValue(false)
-                   Log.w(SIGN_IN, FAILURE, task.exception)
-               }
-           }
-       }
+                if (task.isSuccessful) {
+                    isSignIn.postValue(true)
+                    Log.d(SIGN_IN, SUCCESS)
+                } else {
+                    isSignIn.postValue(false)
+                    Log.w(SIGN_IN, FAILURE, task.exception)
+                }
+            }
+        }
     }
 
     fun signUp(eMail: String, password: String, fullname: String) {
@@ -85,28 +81,32 @@ class FirebaseInstanceRepository() {
         }
     }
 
-
-        fun getUserInfo() {
-            auth.currentUser?.let { user ->
-
-                val docRef = db.collection("users").document(user.uid)
-                docRef.get()
-                    .addOnSuccessListener { document ->
-                        document?.let {
-                            userInfo.value = FirebaseUserModel(
-                                user.email,
-                                document.get("fullname") as String,
-                                document.get("phonenumber") as String
-                            )
-                        }
-                    }
-                    .addOnFailureListener { exception ->
-                        Log.d(ContentValues.TAG, "get failed with ", exception)
-                    }
-            }
-        }
-
-        fun signOut() {
+    fun signOut() {
+        coroutineScope.launch {
             auth.signOut()
         }
+
     }
+}
+
+
+//        fun getUserInfo() {
+//            auth.currentUser?.let { user ->
+//
+//                val docRef = db.collection("users").document(user.uid)
+//                docRef.get()
+//                    .addOnSuccessListener { document ->
+//                        document?.let {
+//                            userInfo.value = FirebaseUserModel(
+//                                user.email,
+//                                document.get("fullname") as String,
+//                                document.get("phonenumber") as String
+//                            )
+//                        }
+//                    }
+//                    .addOnFailureListener { exception ->
+//                        Log.d(ContentValues.TAG, "get failed with ", exception)
+//                    }
+//            }
+//        }
+

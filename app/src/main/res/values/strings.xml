@@ -8,7 +8,7 @@
     <string name="incomplete_information_entered">Incomplete information entered</string>
     <string name="invalid_mail">Invalid email</string>
     <string name="password_match_error">Password match error</string>
-    <string name="sign_up_snack_text">Sign up snack text</string>
+    <string name="sign_up_reg_success_text">Registered Successfully</string>
     <string name="registered_mail">Registered mail!</string>
     <string name="swimming_pool">Swimming pool</string>
     <string name="free_wifi">WiFi</string>
@@ -21,4 +21,20 @@
     <string name="bar">Bar</string>
     <string name="parking">Parking</string>
     <string name="title_activity_maps">MapsActivity</string>
+
+    <string-array name="adults">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="children">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
 </resources>

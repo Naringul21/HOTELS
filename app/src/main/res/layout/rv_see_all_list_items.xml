@@ -36,6 +36,19 @@
             app:layout_constraintStart_toEndOf="@id/hotel_image_seeAll"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <RatingBar
+            android:id="@+id/rBar_seeAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:stepSize="1"
+            android:layout_marginStart="7dp"
+            android:isIndicator="false"
+            app:layout_constraintStart_toEndOf="@+id/hotel_image_seeAll"
+            app:layout_constraintTop_toBottomOf="@id/hotelName_seeAll"
+            android:numStars="5"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:progressTint="#FFCC01"/>
+
         <CheckBox
             android:id="@+id/favorite_button"
             android:layout_width="wrap_content"

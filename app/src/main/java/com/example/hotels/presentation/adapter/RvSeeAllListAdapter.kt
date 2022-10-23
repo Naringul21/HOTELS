@@ -3,10 +3,7 @@ package com.example.hotels.HOTELS.presentation.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Filter
-import android.widget.Filterable
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
@@ -31,6 +28,8 @@ class RvSeeAllListAdapter(val navigator: Navigator) :
         var location: TextView = itemView.findViewById(R.id.hotelLocation_seeAll)
         var image: ImageView = itemView.findViewById(R.id.hotel_image_seeAll)
         val price: TextView = itemView.findViewById(R.id.hotelPrice_seeAll)
+        val ratingBar: RatingBar = itemView.findViewById(R.id.rBar_seeAll)
+
         fun setOnClick(hotels: Hotels) {
             image.setOnClickListener {
                 navigator.navigate(hotels)
@@ -50,6 +49,7 @@ class RvSeeAllListAdapter(val navigator: Navigator) :
 
         val hotel: Hotels = dataList[position]
         holder.apply {
+            ratingBar.rating=hotel.rating.toFloat()
             name.text = hotel.name
             location.text = hotel.location
             price.text = hotel.price

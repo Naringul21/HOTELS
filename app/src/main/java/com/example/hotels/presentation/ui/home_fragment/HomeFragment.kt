@@ -48,9 +48,6 @@ class HomeFragment : Fragment(R.layout.fragment_home), View.OnClickListener {
 
 
         viewModel.fetchData().observe(viewLifecycleOwner, Observer {
-//            it.filter {
-//                it.name.length > 15
-//            }
 
                 rv_latest_searching_hotel.layoutManager =
                     LinearLayoutManager(activity, RecyclerView.HORIZONTAL, false)

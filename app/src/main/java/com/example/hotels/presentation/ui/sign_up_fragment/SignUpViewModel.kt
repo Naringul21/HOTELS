@@ -1,10 +1,14 @@
 package com.example.hotels.HOTELS.presentation.ui.sign_up_fragment
 
 import android.util.Patterns
+import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.hotels.HOTELS.domain.repositorys.FirebaseInstanceRepository
+import com.example.hotels.HOTELS.utils.showSnackbar
+import com.example.hotels.R
+import kotlin.contracts.contract
 
 class SignUpViewModel : ViewModel(){
 
@@ -40,6 +44,7 @@ class SignUpViewModel : ViewModel(){
                 _isValidMail.value = false
             } else {
                     usersRepo.signUp(eMail, password, fullname)
+
                 }
             }
         }

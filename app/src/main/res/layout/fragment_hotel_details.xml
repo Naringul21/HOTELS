@@ -16,7 +16,7 @@
     <TextView
         android:id="@+id/nameDetail"
         style="@style/text_style_1"
-        android:layout_width="wrap_content"
+        android:layout_width="370dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
@@ -58,62 +58,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/nameDetail" />
 
-
-    <ImageView
-        android:id="@+id/rating1"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/ic_baseline_star_rate_24"
+    <RatingBar
+        android:id="@+id/rBar_detailFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:stepSize="1"
+        android:layout_marginStart="7dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/info_hotelDetails" />
-
-    <ImageView
-        android:id="@+id/rating2"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/ic_baseline_star_rate_24"
-        app:layout_constraintStart_toEndOf="@id/rating1"
-        app:layout_constraintTop_toBottomOf="@id/info_hotelDetails" />
-
-    <ImageView
-        android:id="@+id/rating3"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/ic_baseline_star_rate_24"
-        app:layout_constraintStart_toEndOf="@id/rating2"
-        app:layout_constraintTop_toBottomOf="@+id/info_hotelDetails" />
-
-    <ImageView
-        android:id="@+id/rating4"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/ic_baseline_star_rate_24"
-        app:layout_constraintStart_toEndOf="@id/rating3"
-        app:layout_constraintTop_toBottomOf="@id/info_hotelDetails" />
-
-    <ImageView
-        android:id="@+id/rating5"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/ic_baseline_star_rate_24"
-        app:layout_constraintStart_toEndOf="@id/rating4"
-        app:layout_constraintTop_toBottomOf="@id/info_hotelDetails" />
+        app:layout_constraintTop_toBottomOf="@id/info_hotelDetails"
+        android:numStars="5"
+        style="?android:attr/ratingBarStyleIndicator"
+        android:progressTint="#F4CE37"/>
 
     <TextView
         android:id="@+id/description_hotel"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="380dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:textSize="18sp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rating1" />
+        app:layout_constraintTop_toBottomOf="@id/rBar_detailFragment" />
 
 
     <fragment
@@ -273,9 +239,9 @@
         android:id="@+id/paymentButton"
         android:layout_width="150dp"
         android:layout_height="60dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="15dp"
-        android:background="@drawable/button_payment"
+        android:layout_marginTop="30dp"
+       style="@style/button_style"
         android:text="Proceed to Payment"
         android:textColor="@color/white"
         android:textSize="16dp"
@@ -299,7 +265,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:text="for 1 room/1 night"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/priceDetails2" />
 
@@ -308,7 +274,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:text="Breakfast included"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/info" />

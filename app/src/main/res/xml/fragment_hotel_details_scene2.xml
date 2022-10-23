@@ -10,7 +10,7 @@
 
         <OnSwipe
             motion:touchAnchorId="@+id/imageDetail"
-            motion:touchAnchorSide="top"
+            motion:touchAnchorSide="bottom"
             motion:dragDirection="dragUp" />
        <KeyFrameSet>
        </KeyFrameSet>
@@ -28,7 +28,7 @@
         <Constraint
             android:id="@+id/nameDetail"
             style="@style/text_style_1"
-            android:layout_width="wrap_content"
+            android:layout_width="370dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
@@ -72,60 +72,27 @@
 
 
         <Constraint
-            android:id="@+id/rating1"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/ic_baseline_star_rate_24"
+            android:id="@+id/rBar_detailFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:stepSize="1"
+            android:layout_marginStart="7dp"
             motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintTop_toBottomOf="@id/info_hotelDetails" />
-
-        <Constraint
-            android:id="@+id/rating2"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/ic_baseline_star_rate_24"
-            motion:layout_constraintStart_toEndOf="@id/rating1"
-            motion:layout_constraintTop_toBottomOf="@id/info_hotelDetails" />
-
-        <Constraint
-            android:id="@+id/rating3"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/ic_baseline_star_rate_24"
-            motion:layout_constraintStart_toEndOf="@id/rating2"
-            motion:layout_constraintTop_toBottomOf="@+id/info_hotelDetails" />
-
-        <Constraint
-            android:id="@+id/rating4"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/ic_baseline_star_rate_24"
-            motion:layout_constraintStart_toEndOf="@id/rating3"
-            motion:layout_constraintTop_toBottomOf="@id/info_hotelDetails" />
-
-        <Constraint
-            android:id="@+id/rating5"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/ic_baseline_star_rate_24"
-            motion:layout_constraintStart_toEndOf="@id/rating4"
-            motion:layout_constraintTop_toBottomOf="@id/info_hotelDetails" />
+            motion:layout_constraintTop_toBottomOf="@id/info_hotelDetails"
+            android:numStars="5"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:progressTint="#F4CE37"/>
 
         <Constraint
             android:id="@+id/description_hotel"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="380dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:textSize="18sp"
+            android:textSize="16sp"
+            motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintTop_toBottomOf="@id/rating1" />
+            motion:layout_constraintTop_toBottomOf="@id/rBar_detailFragment" />
 
 
         <Constraint
@@ -282,9 +249,9 @@
             android:id="@+id/paymentButton"
             android:layout_width="150dp"
             android:layout_height="60dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="65dp"
             android:layout_marginEnd="20dp"
-            android:background="@drawable/button_payment"
+            style="@style/button_style"
             android:text="Proceed to Payment"
             android:textColor="@color/white"
             android:textSize="16sp"
@@ -308,7 +275,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:text="for 1 room/1 night"
-            android:textSize="18sp"
+            android:textSize="16sp"
             motion:layout_constraintTop_toBottomOf="@id/priceDetails2"
             motion:layout_constraintStart_toStartOf="parent"/>
 
@@ -317,6 +284,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
+            android:textSize="16sp"
             android:text="Breakfast included"
             motion:layout_constraintTop_toBottomOf="@id/info"
             motion:layout_constraintStart_toStartOf="parent"/>
@@ -334,7 +302,7 @@
         <Constraint
             android:id="@+id/nameDetail"
             style="@style/text_style_1"
-            android:layout_width="wrap_content"
+            android:layout_width="370dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
@@ -378,60 +346,27 @@
 
 
         <Constraint
-            android:id="@+id/rating1"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/ic_baseline_star_rate_24"
+            android:id="@+id/rBar_detailFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:stepSize="1"
+            android:layout_marginStart="7dp"
             motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintTop_toBottomOf="@id/info_hotelDetails" />
-
-        <Constraint
-            android:id="@+id/rating2"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/ic_baseline_star_rate_24"
-            motion:layout_constraintStart_toEndOf="@id/rating1"
-            motion:layout_constraintTop_toBottomOf="@id/info_hotelDetails" />
-
-        <Constraint
-            android:id="@+id/rating3"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/ic_baseline_star_rate_24"
-            motion:layout_constraintStart_toEndOf="@id/rating2"
-            motion:layout_constraintTop_toBottomOf="@+id/info_hotelDetails" />
-
-        <Constraint
-            android:id="@+id/rating4"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/ic_baseline_star_rate_24"
-            motion:layout_constraintStart_toEndOf="@id/rating3"
-            motion:layout_constraintTop_toBottomOf="@id/info_hotelDetails" />
-
-        <Constraint
-            android:id="@+id/rating5"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/ic_baseline_star_rate_24"
-            motion:layout_constraintStart_toEndOf="@id/rating4"
-            motion:layout_constraintTop_toBottomOf="@id/info_hotelDetails" />
+            motion:layout_constraintTop_toBottomOf="@id/info_hotelDetails"
+            android:numStars="5"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:progressTint="#F4CE37"/>
 
         <Constraint
             android:id="@+id/description_hotel"
-            android:layout_width="wrap_content"
+            android:layout_width="380dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:textSize="18sp"
+            android:textSize="16sp"
+            motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintTop_toBottomOf="@id/rating1" />
+            motion:layout_constraintTop_toBottomOf="@id/rBar_detailFragment" />
 
 
         <Constraint
@@ -588,9 +523,9 @@
             android:id="@+id/paymentButton"
             android:layout_width="150dp"
             android:layout_height="60dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="65dp"
             android:layout_marginEnd="20dp"
-            android:background="@drawable/button_payment"
+            style="@style/button_style"
             android:text="Proceed to Payment"
             android:textColor="@color/white"
             android:textSize="16sp"
@@ -614,7 +549,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:text="for 1 room/1 night"
-            android:textSize="18sp"
+            android:textSize="16sp"
             motion:layout_constraintTop_toBottomOf="@id/priceDetails2"
             motion:layout_constraintStart_toStartOf="parent"/>
 
@@ -623,6 +558,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
+            android:textSize="16sp"
             android:text="Breakfast included"
             motion:layout_constraintTop_toBottomOf="@id/info"
             motion:layout_constraintStart_toStartOf="parent"/>

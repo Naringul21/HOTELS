@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import com.example.hotels.R
 import com.example.hotels.databinding.FragmentReservationBinding
 import com.example.hotels.databinding.FragmentSignUpBinding
@@ -18,7 +19,6 @@ import java.util.*
 class ReservationFragment : Fragment(R.layout.fragment_reservation) {
     private var _binding: FragmentReservationBinding? = null
     private val binding: FragmentReservationBinding get() = _binding!!
-    lateinit var calendar: Calendar
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,7 +34,29 @@ class ReservationFragment : Fragment(R.layout.fragment_reservation) {
         super.onViewCreated(view, savedInstanceState)
         binding.regCheckIn.setOnClickListener {
             showDataRangePicker()
+            initSpinner()
         }
+
+
+    }
+
+    fun initSpinner(){
+        val adults = resources.getStringArray(R.array.adults)
+        val children = resources.getStringArray(R.array.children)
+
+
+        if (spinner_adults != null) {
+            val adapter = ArrayAdapter(requireContext(),
+                android.R.layout.simple_spinner_item, adults)
+            spinner_adults.adapter = adapter
+        }
+
+        if (spinner_adults != null) {
+            val adapter = ArrayAdapter(requireContext(),
+                android.R.layout.simple_spinner_item, children)
+            spinner_children.adapter = adapter
+        }
+
     }
 
     private fun showDataRangePicker() {

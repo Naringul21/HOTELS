@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/dm_serif_display"
         android:text="Let's Go Travel"
-        android:textColor="@color/main_color"
+        android:textColor="@color/toolbar_background3"
         android:textSize="40sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

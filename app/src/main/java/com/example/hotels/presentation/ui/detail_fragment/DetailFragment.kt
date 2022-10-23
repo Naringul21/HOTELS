@@ -76,11 +76,14 @@ class DetailFragment : Fragment(R.layout.fragment_hotel_details), OnMapReadyCall
        googleMap=gMap
 
         googleMap.uiSettings.isZoomControlsEnabled=true
-        val baku=com.google.android.gms.maps.model.LatLng(hotel.lat, hotel.lng)
+        val latlng=com.google.android.gms.maps.model.LatLng(hotel.lat, hotel.lng)
 
-        val marker=MarkerOptions().position(baku)
+        val marker=MarkerOptions().position(latlng)
         googleMap.addMarker(marker)
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(baku))
+
+        gMap.setMinZoomPreference(6.0f)
+        gMap.setMaxZoomPreference(15.0f)
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(latlng))
     }
 
 }
