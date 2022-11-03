@@ -13,6 +13,7 @@ data class Hotels(
     val lat: Double=0.0,
     val lng: Double=0.0,
     val rating: Long =0,
-    val id: Int=0,
+    val hotel_id: String="",
+    val checkout_quantity: String=""
 
 ) : Serializable

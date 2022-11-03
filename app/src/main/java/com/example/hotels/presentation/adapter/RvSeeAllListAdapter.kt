@@ -31,7 +31,7 @@ class RvSeeAllListAdapter(val navigator: Navigator) :
         val ratingBar: RatingBar = itemView.findViewById(R.id.rBar_seeAll)
 
         fun setOnClick(hotels: Hotels) {
-            image.setOnClickListener {
+            itemView.setOnClickListener {
                 navigator.navigate(hotels)
 
             }

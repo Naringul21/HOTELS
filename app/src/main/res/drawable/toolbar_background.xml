@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
- <gradient android:startColor="@color/toolbar_background1"
-     android:endColor="@color/toolbar_background3"/>
+ <gradient android:startColor="@color/toolbar_background3"
+     android:endColor="@color/yellow"/>
     <corners android:radius="30dp" />
 
 

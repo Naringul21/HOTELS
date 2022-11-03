@@ -4,11 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.hotels.HOTELS.data.models.Hotels
-import com.example.hotels.data.repositorys.FirestoreInstanceRepository
+import com.example.hotels.data.repositories.FirestoreRepositoryImpl
 
 class SeeAllFragmentViewModel:ViewModel() {
-    private val repo = FirestoreInstanceRepository()
-    fun fetchData(): LiveData<MutableList<Hotels>> {
+    private val repo = FirestoreRepositoryImpl()
+    fun getDataSeeAll(): LiveData<MutableList<Hotels>> {
         val mutableData = MutableLiveData<MutableList<Hotels>>()
         repo.getHotelData().observeForever { hotelList ->
             mutableData.value = hotelList

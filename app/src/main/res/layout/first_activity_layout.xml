@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.ui.activity.FirstActivity">
+    tools:context=".presentation.ui.activity.FirstActivity"
+    android:id="@+id/first_activity">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -12,7 +13,9 @@
             android:layout_height="90dp"
             android:layout_marginTop="-20dp"
             android:background="@drawable/toolbar_background"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -23,17 +26,10 @@
                 android:textSize="30sp" />
 
             <ImageView
-                android:id="@+id/alarm_image"
-                android:layout_width="25dp"
-                android:layout_height="28dp"
-                android:layout_marginStart="250dp"
-                android:src="@mipmap/alarm_image_foreground" />
-
-            <ImageView
                 android:id="@+id/menu_image"
                 android:layout_width="25dp"
                 android:layout_height="28dp"
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="270dp"
                 android:src="@mipmap/menu1_image_foreground"
                 tools:ignore="TouchTargetSizeCheck" />
         </androidx.appcompat.widget.Toolbar>

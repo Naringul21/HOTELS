@@ -6,16 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.example.hotels.HOTELS.data.models.Hotels
 import com.example.hotels.R
+import com.example.hotels.data.repositories.FirestoreRepositoryImpl
 import com.example.hotels.databinding.FragmentHotelDetailsBinding
+import com.example.hotels.domain.models.CardItems
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.cart_list_item.*
 import kotlinx.android.synthetic.main.fragment_hotel_details.*
 
 class DetailFragment : Fragment(R.layout.fragment_hotel_details), OnMapReadyCallback {
@@ -23,6 +26,7 @@ class DetailFragment : Fragment(R.layout.fragment_hotel_details), OnMapReadyCall
     private var _binding: FragmentHotelDetailsBinding? = null
     private val binding: FragmentHotelDetailsBinding get() = _binding!!
     lateinit var hotel: Hotels
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,11 +53,10 @@ class DetailFragment : Fragment(R.layout.fragment_hotel_details), OnMapReadyCall
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
-        paymentButton.setOnClickListener {
-            findNavController().navigate(R.id.reservationFragment)
-        }
-
-    }
+        addToCard.setOnClickListener {
+                    addToCart()
+                }
+            }
 
     private fun setData() {
      binding.apply {
@@ -66,6 +69,24 @@ class DetailFragment : Fragment(R.layout.fragment_hotel_details), OnMapReadyCall
      }
     }
 
+    private fun addToCart() {
+        val cartItem = CardItems(
+            name = hotel.name,
+            price = hotel.price,
+            image = hotel.image,
+            checkout_quantity = hotel.checkout_quantity,
+        )
+        FirestoreRepositoryImpl().addToCardItem(this, cartItem)
+    }
+
+    fun addToCartDone(){
+        binding.addToCard.visibility=View.GONE
+        Snackbar.make(binding.addToCard,"Added to the cart",Snackbar.LENGTH_LONG).show()
+    }
+    fun productAlreadyInCart(){
+        binding.addToCard.visibility=View.GONE
+
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

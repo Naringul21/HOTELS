@@ -1,18 +1,14 @@
 package com.example.hotels.HOTELS.presentation.ui.sign_up_fragment
 
 import android.util.Patterns
-import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.hotels.HOTELS.domain.repositorys.FirebaseInstanceRepository
-import com.example.hotels.HOTELS.utils.showSnackbar
-import com.example.hotels.R
-import kotlin.contracts.contract
+import com.example.hotels.HOTELS.domain.repositorys.AuthRepositoryImpl
 
-class SignUpViewModel : ViewModel(){
+class SignUpViewModel : ViewModel() {
 
-    private var usersRepo = FirebaseInstanceRepository()
+    private var usersRepo = AuthRepositoryImpl()
 
     private var _isInfosValid = MutableLiveData<Boolean>()
     val isInfosValid: LiveData<Boolean> = _isInfosValid
@@ -26,9 +22,6 @@ class SignUpViewModel : ViewModel(){
     private var _isSignUp = MutableLiveData<Boolean>()
     val isSignUp: LiveData<Boolean> = _isSignUp
 
-    init {
-        _isSignUp = usersRepo.isSignUp
-    }
 
     fun signUp(
         eMail: String,
@@ -42,10 +35,15 @@ class SignUpViewModel : ViewModel(){
 
             if (Patterns.EMAIL_ADDRESS.matcher(eMail).matches().not()) {
                 _isValidMail.value = false
-            } else {
+            } else
+                if (password.length < 8) {
+                    _isPasswordMatch.value = false
+
+                } else {
+                    _isSignUp.value = true
                     usersRepo.signUp(eMail, password, fullname)
 
                 }
-            }
         }
     }
+}

@@ -1,4 +1,4 @@
-package com.example.hotels.data.repositorys
+package com.example.hotels.data.repositories
 
 import com.example.hotels.domain.models.HotelResponse
 import retrofit2.Response

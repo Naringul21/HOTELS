@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginHorizontal="10dp"
     android:layout_marginTop="10dp"
     android:layout_marginBottom="5dp"
@@ -18,14 +18,14 @@
         android:background="@color/fragment_background">
 
         <ImageView
-            android:id="@+id/hotel_image_seeAll"
+            android:id="@+id/hotel_image_cartList"
             android:layout_width="80dp"
             android:layout_height="match_parent"
             android:layout_marginStart="15dp"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/hotelName_seeAll"
+            android:id="@+id/hotelName_cartList"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
@@ -33,7 +33,7 @@
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/hotel_image_seeAll"
+            app:layout_constraintStart_toEndOf="@id/hotel_image_cartList"
             app:layout_constraintTop_toTopOf="parent" />
 
         <CheckBox
@@ -43,33 +43,52 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="15dp"
             android:button="@drawable/selector_wishlist_item"
-            app:layout_constraintStart_toEndOf="@id/hotelName_seeAll"
+            app:layout_constraintStart_toEndOf="@id/hotelName_cartList"
             app:layout_constraintTop_toTopOf="parent" />
 
-
-        <ImageView
-            android:id="@+id/locationImage_seeAll"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginBottom="10dp"
-            android:src="@drawable/ic_baseline_location_on_24"
-            app:layout_constraintStart_toEndOf="@id/hotel_image_seeAll"
-            app:layout_constraintBottom_toBottomOf="parent" />
-
-
-        <TextView
-            android:id="@+id/hotelLocation_seeAll"
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/ll_cart_quantity"
+    android:orientation="horizontal"
+    android:layout_marginTop="35dp"
+    android:gravity="center"
+    app:layout_constraintStart_toEndOf="@id/hotel_image_cartList"
+    app:layout_constraintTop_toBottomOf="@id/hotelName_cartList">
+        <ImageButton
+            android:id="@+id/cart_remove_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:src="@drawable/ic_baseline_remove_24"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            />
+        <TextView
+            android:id="@+id/cart_item_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="1"
+            android:elevation="5dp"
+            android:textSize="25sp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="@color/white"
+            android:textStyle="bold"
             android:textColor="@color/black"
-            android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@id/locationImage_seeAll"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"/>
+        <ImageButton
+            android:id="@+id/cart_add_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_add_24"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            />
+</LinearLayout>
 
         <TextView
-            android:id="@+id/hotelPrice_seeAll"
+            android:id="@+id/hotelPrice_cartList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -77,8 +96,9 @@
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/hotelName_seeAll"
+            app:layout_constraintTop_toBottomOf="@id/hotelName_cartList"
             android:layout_marginEnd="15dp"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

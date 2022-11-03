@@ -12,6 +12,7 @@ import com.example.hotels.HOTELS.presentation.ui.see_all_fragment.SeeAllFragment
 import com.example.hotels.HOTELS.presentation.ui.detail_fragment.DetailFragment
 import com.example.hotels.HOTELS.presentation.ui.sign_up_fragment.SignUpFragment
 import com.example.hotels.R
+import com.example.hotels.presentation.ui.CartFragment
 import kotlinx.android.synthetic.main.fragment_on_boarding.view.*
 
 
@@ -30,6 +31,7 @@ class OnBoardingFragment : Fragment() {
             HomeFragment(),
             SeeAllFragment(),
             DetailFragment(),
+            CartFragment()
         )
 
         val adapter =

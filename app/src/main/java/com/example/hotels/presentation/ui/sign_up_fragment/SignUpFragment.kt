@@ -5,8 +5,6 @@ import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.view.isEmpty
 import androidx.navigation.fragment.findNavController
 import com.example.hotels.HOTELS.utils.showSnackbar
 import com.example.hotels.R
@@ -34,7 +32,8 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up), View.OnClickListener
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        button_continue_signup.setOnClickListener(this)
+        button_register_signup.setOnClickListener(this)
+        button_signup_login.setOnClickListener(this)
         initObservers()
 
 
@@ -47,24 +46,29 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up), View.OnClickListener
             with(viewModel) {
 
                 isInfosValid.observe(viewLifecycleOwner) {
-                    if (it.not()) showSnackbar(
+                    if (it == false)
+                        emailInputLayout.error = getString(R.string.invalid_mail)
+                    passwordInputLayout.error = getString(R.string.password_match_error)
+                    fullNameInputLayout.error = getString(R.string.fullname_empty)
+                    showSnackbar(
                         requireView(),
                         R.string.incomplete_information_entered
                     )
                 }
 
                 isValidMail.observe(viewLifecycleOwner) {
-                    if (it.not()) {
+                    if (it == false) {
                         emailInputLayout.error = getString(R.string.invalid_mail)
+                        showSnackbar(requireView(), R.string.invalid_mail)
                     } else {
                         emailInputLayout.error = ""
                     }
                 }
 
                 isPasswordMatch.observe(viewLifecycleOwner) {
-                    if (it.not()) {
+                    if (it == false) {
                         passwordInputLayout.error = getString(R.string.password_match_error)
-
+                        showSnackbar(requireView(), R.string.password_match_error)
                     } else {
                         passwordInputLayout.error = ""
 
@@ -73,28 +77,26 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up), View.OnClickListener
 
                 isSignUp.observe(viewLifecycleOwner) {
                     if (it == true) {
+                        showSnackbar(
+                            requireView(),
+                            R.string.sign_up_reg_success_text
+                        )
                         clearFields()
-                        binding.progressBar.visibility = View.VISIBLE
-                        Toast.makeText(requireContext(),
-                            "Registered successfully",
-                            Toast.LENGTH_SHORT).show()
 
                     } else {
-                        showSnackbar(requireView(), R.string.incomplete_information_entered)
+                        showSnackbar(requireView(), R.string.registration_is_failed)
                     }
                 }
             }
         }
     }
 
-    fun signUpButton(
+    private fun signUpButton(
         email: String,
         password: String,
         fullname: String,
     ) {
         viewModel.signUp(email, password, fullname)
-
-
     }
 
     private fun clearFields() {
@@ -108,6 +110,26 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up), View.OnClickListener
         }
     }
 
+//    private fun showWarning() {
+//      with(binding){
+//          with(viewModel){
+//          isInfosValid.observe(viewLifecycleOwner) {
+//            if (it == false)
+//             binding.emailInputLayout.error = getString(R.string.invalid_mail)
+//            passwordInputLayout.error = getString(R.string.password_match_error)
+//            fullNameInputLayout.error = getString(R.string.fullname_empty)
+//            showSnackbar(
+//                requireView(),
+//                R.string.incomplete_information_entered
+//            )
+//
+////            if (it == false)
+//
+////        }
+//        }}}
+//    }
+
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
@@ -116,11 +138,15 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up), View.OnClickListener
 
     override fun onClick(p0: View?) {
         when (p0) {
-            button_continue_signup -> {
+            button_register_signup -> {
                 signUpButton(edit_email.text.toString(),
                     edit_password.text.toString(),
                     edit_fullName.text.toString())
-                findNavController().navigate(R.id.logInFragment)
+
+            }
+
+            button_signup_login -> {
+                findNavController().navigate(R.id.action_signUpFragment_to_logInFragment)
             }
         }
     }

@@ -12,6 +12,7 @@ import com.example.hotels.HOTELS.utils.Constants.PASSWORD
 import com.example.hotels.HOTELS.utils.Constants.SIGN_IN
 import com.example.hotels.HOTELS.utils.Constants.SIGN_UP
 import com.example.hotels.HOTELS.utils.Constants.SUCCESS
+import com.example.hotels.domain.repositories.AuthRepository
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -19,7 +20,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class FirebaseInstanceRepository() {
+class AuthRepositoryImpl() : AuthRepository {
     private val coroutineScope = CoroutineScope(Dispatchers.IO)
     var isSignIn = MutableLiveData<Boolean>()
 
@@ -30,7 +31,7 @@ class FirebaseInstanceRepository() {
     private val auth = Firebase.auth
     private val db = Firebase.firestore
 
-    fun signIn(eMail: String, password: String) {
+    override fun signIn(eMail: String, password: String) {
 
         coroutineScope.launch {
             auth.signInWithEmailAndPassword(eMail, password).addOnCompleteListener { task ->
@@ -46,12 +47,10 @@ class FirebaseInstanceRepository() {
         }
     }
 
-    fun signUp(eMail: String, password: String, fullname: String) {
+    override fun signUp(eMail: String, password: String, fullname: String) {
         coroutineScope.launch {
             auth.createUserWithEmailAndPassword(eMail, password).addOnCompleteListener { task ->
-
                 if (task.isSuccessful) {
-
                     val currentUser = auth.currentUser
                     currentUser?.let { fbUser ->
                         val user = hashMapOf(
@@ -81,7 +80,7 @@ class FirebaseInstanceRepository() {
         }
     }
 
-    fun signOut() {
+    override fun signOut() {
         coroutineScope.launch {
             auth.signOut()
         }
@@ -89,24 +88,4 @@ class FirebaseInstanceRepository() {
     }
 }
 
-
-//        fun getUserInfo() {
-//            auth.currentUser?.let { user ->
-//
-//                val docRef = db.collection("users").document(user.uid)
-//                docRef.get()
-//                    .addOnSuccessListener { document ->
-//                        document?.let {
-//                            userInfo.value = FirebaseUserModel(
-//                                user.email,
-//                                document.get("fullname") as String,
-//                                document.get("phonenumber") as String
-//                            )
-//                        }
-//                    }
-//                    .addOnFailureListener { exception ->
-//                        Log.d(ContentValues.TAG, "get failed with ", exception)
-//                    }
-//            }
-//        }
 

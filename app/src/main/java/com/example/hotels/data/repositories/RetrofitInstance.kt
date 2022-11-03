@@ -1,4 +1,4 @@
-package com.example.hotels.data.repositorys
+package com.example.hotels.data.repositories
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

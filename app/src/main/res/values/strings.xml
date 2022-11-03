@@ -5,9 +5,11 @@
     <string name="latest_searching">LATEST SEARCHING</string>
 
     <string name="with_Google">with Google</string>
+    <string name="registration_is_failed">Registration is failed</string>
     <string name="incomplete_information_entered">Incomplete information entered</string>
     <string name="invalid_mail">Invalid email</string>
-    <string name="password_match_error">Password match error</string>
+    <string name="fullname_empty">Fullname is empty</string>
+    <string name="password_match_error">Your password must be at least 8 charachters</string>
     <string name="sign_up_reg_success_text">Registered Successfully</string>
     <string name="registered_mail">Registered mail!</string>
     <string name="swimming_pool">Swimming pool</string>

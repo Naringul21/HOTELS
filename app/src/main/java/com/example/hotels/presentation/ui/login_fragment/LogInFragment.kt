@@ -34,18 +34,33 @@ class LogInFragment : Fragment(R.layout.fragment_log_in), View.OnClickListener {
         button_continue_login.setOnClickListener(this)
         text_button_signUp.setOnClickListener(this)
 
-        with(viewModel) {
+        initObserve()
 
-            isSignIn.observe(viewLifecycleOwner) {
-                if (it == true) {
-                    binding.progressBarLogin.visibility=View.VISIBLE
-                } else {
-                    if (emailInputLayoutLogin.isEmpty() || passwordInputLayoutLogin.isEmpty())
+    }
+
+    private fun initObserve() {
+        with(binding) {
+            with(viewModel) {
+
+                isSignIn.observe(viewLifecycleOwner) { it ->
+                    if (it==true) {
+                        findNavController().navigate(R.id.homeFragment)
+                    } else {
+                        emailInputLayoutLogin.error = getString(R.string.invalid_mail)
+                        passwordInputLayoutLogin.error = getString(R.string.password_match_error)
+
+                        showSnackbar(requireView(), R.string.wrong_email_password)
+                    }
+                }
+                isInfosValid.observe(viewLifecycleOwner) {
+                    if (it == false) {
+                        emailInputLayoutLogin.error = getString(R.string.invalid_mail)
+                        passwordInputLayoutLogin.error = getString(R.string.password_match_error)
                         showSnackbar(requireView(), R.string.incomplete_information_entered)
+                    }
                 }
             }
         }
-
     }
 
     private fun signInButton(email: String, password: String) {
@@ -61,7 +76,8 @@ class LogInFragment : Fragment(R.layout.fragment_log_in), View.OnClickListener {
         when (p0) {
             button_continue_login -> {
                 signInButton(edit_emailLogin.text.toString(), edit_passwordLogin.text.toString())
-                findNavController().navigate(R.id.homeFragment)
+
+
             }
             text_button_signUp -> {
                 findNavController().navigate(R.id.signUpFragment)

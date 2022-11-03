@@ -57,10 +57,6 @@
             android:id="@+id/action_logInFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
         <action
-            app:enterAnim="@anim/slide_in"
-            app:exitAnim="@anim/slide_out"
-            app:popEnterAnim="@anim/slide_in"
-            app:popExitAnim="@anim/slide_out"
             android:id="@+id/action_logInFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
@@ -84,14 +80,14 @@
         android:label="fragment_hotel_details"
         tools:layout="@layout/fragment_hotel_details" >
         <action
-            android:id="@+id/action_fragment_hotel_details_to_reservationFragment"
-            app:destination="@id/reservationFragment" />
+            android:id="@+id/action_fragment_hotel_details_to_cartFragment2"
+            app:destination="@id/cartFragment2" />
     </fragment>
     <fragment
-        android:id="@+id/reservationFragment"
-        android:name="com.example.hotels.presentation.ui.ReservationFragment"
-        android:label="fragment_reservation"
-        tools:layout="@layout/fragment_reservation" />
+        android:id="@+id/cartFragment2"
+        android:name="com.example.hotels.presentation.ui.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_card" />
 
 
 </navigation>

@@ -17,6 +17,8 @@
     <color name="fragment_background">#FFE9CE</color>
     <color name="red">#CEF54B4B</color>
     <color name="yellow">#FFE500</color>
+    <color name="splash_background">#FFDFCB</color>
+
 
 
 </resources>
