@@ -18,14 +18,14 @@
         android:background="@color/fragment_background">
 
         <ImageView
-            android:id="@+id/hotel_image_seeAll"
+            android:id="@+id/hotel_image_favorite"
             android:layout_width="80dp"
             android:layout_height="match_parent"
             android:layout_marginStart="15dp"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/hotelName_seeAll"
+            android:id="@+id/hotelName_favorite"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
@@ -33,56 +33,43 @@
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/hotel_image_seeAll"
+            app:layout_constraintStart_toEndOf="@id/hotel_image_favorite"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <RatingBar
-            android:id="@+id/rBar_seeAll"
+        <CheckBox
+            android:id="@+id/favorite_button_fv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:stepSize="1"
-            android:layout_marginStart="7dp"
-            android:isIndicator="false"
-            app:layout_constraintStart_toEndOf="@+id/hotel_image_seeAll"
-            app:layout_constraintTop_toBottomOf="@id/hotelName_seeAll"
-            android:numStars="5"
-            style="?android:attr/ratingBarStyleIndicator"
-            android:progressTint="#FFCC01"/>
-
-<!--        <CheckBox-->
-<!--            android:id="@+id/favorite_button_seeAll"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="30dp"-->
-<!--            android:layout_marginTop="15dp"-->
-<!--            android:button="@drawable/selector_wishlist_item"-->
-<!--            app:layout_constraintStart_toEndOf="@id/hotelName_seeAll"-->
-<!--            app:layout_constraintTop_toTopOf="parent" />-->
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:button="@drawable/selector_wishlist_item"
+            app:layout_constraintStart_toEndOf="@id/hotelName_favorite"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <ImageView
-            android:id="@+id/locationImage_seeAll"
+            android:id="@+id/locationImage_favorite"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginStart="15dp"
             android:layout_marginBottom="10dp"
             android:src="@drawable/ic_baseline_location_on_24"
-            app:layout_constraintStart_toEndOf="@id/hotel_image_seeAll"
-           app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintStart_toEndOf="@id/hotel_image_favorite"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
 
         <TextView
-            android:id="@+id/hotelLocation_seeAll"
+            android:id="@+id/hotelLocation_favorite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:textColor="@color/black"
             android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@id/locationImage_seeAll"
+            app:layout_constraintStart_toEndOf="@id/locationImage_favorite"
             app:layout_constraintBottom_toBottomOf="parent" />
 
         <TextView
-            android:id="@+id/hotelPrice_seeAll"
+            android:id="@+id/hotelPrice_favorite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -90,8 +77,22 @@
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/hotelName_seeAll"
+            app:layout_constraintTop_toBottomOf="@id/hotelName_favorite"
             android:layout_marginEnd="15dp"/>
+
+        <Button
+            android:id="@+id/addToCard_favorite"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_payment"
+            android:text="Add to Cart"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

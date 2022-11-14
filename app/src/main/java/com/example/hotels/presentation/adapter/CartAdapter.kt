@@ -48,18 +48,18 @@ lateinit var repo: FirestoreRepositoryImpl
            name.text = cartItem.name
             price.text = cartItem.price
             quantity.text=cartItem.checkout_quantity
-
         }
         holder.addItem.setOnClickListener {
-            val checkoutQuantity=cartItem.checkout_quantity.toInt()
-            val itemHashMap=HashMap<String,Any>()
-                itemHashMap["checkout_quantity"]=(checkoutQuantity+1).toString()
-                repo.updateMyCart(CartFragment(),cartItem.id,itemHashMap,position)
+            val checkoutQuantity=cartItem.checkout_quantity.toInt()+1
+            cartItem.checkout_quantity=checkoutQuantity.toString()
+//            val itemHashMap=HashMap<String,Any>()
+//                itemHashMap["checkout_quantity"]=(checkoutQuantity+1).toString()
+//                repo.updateMyCart(CartFragment(),cartItem.id,cartItem.checkout_quantity.toInt().toString(),position)
         }
         holder.removeItem.setOnClickListener {
 
             if(cartItem.checkout_quantity=="1"){
-                repo.removeFromCard(CartFragment(),cartItem.id,position)
+                repo.removeItemCart(position)
             }else{
                 val checkoutQuantity=cartItem.checkout_quantity.toInt()
                 val itemHashMap=HashMap<String,Any>()

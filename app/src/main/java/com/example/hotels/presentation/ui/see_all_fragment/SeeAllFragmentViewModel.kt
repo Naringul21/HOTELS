@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.hotels.HOTELS.data.models.Hotels
 import com.example.hotels.data.repositories.FirestoreRepositoryImpl
+import com.example.hotels.domain.models.FavoriteItem
 
 class SeeAllFragmentViewModel:ViewModel() {
     private val repo = FirestoreRepositoryImpl()
@@ -15,6 +16,8 @@ class SeeAllFragmentViewModel:ViewModel() {
         }
         return mutableData
     }
+
+
 
 
 }

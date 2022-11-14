@@ -70,6 +70,16 @@
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toBottomOf="@id/nameDetail" />
 
+        <Constraint
+            android:id="@+id/favorite_button_details"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_favorite_border_24"
+            android:layout_marginEnd="10dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/nameDetail"
+            android:layout_marginTop="5dp" />
+
 
         <Constraint
             android:id="@+id/rBar_detailFragment"
@@ -343,6 +353,16 @@
             android:textSize="18sp"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toBottomOf="@id/nameDetail" />
+
+        <Constraint
+            android:id="@+id/favorite_button_details"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_favorite_border_24"
+            android:layout_marginEnd="10dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/nameDetail"
+            android:layout_marginTop="5dp" />
 
 
         <Constraint

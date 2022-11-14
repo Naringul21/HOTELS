@@ -14,16 +14,14 @@ import com.squareup.picasso.Picasso
 class RvHomeFragmentAdapter() : RecyclerView.Adapter<RvHomeFragmentAdapter.MyViewHolder>() {
     fun setListData(data: MutableList<Hotels>) {
         dataList = data
-
-
     }
 
     inner class MyViewHolder(viewItem: View) : RecyclerView.ViewHolder(viewItem) {
-        val name: TextView = itemView.findViewById(R.id.hotelName_homeFr)
-        val location: TextView = itemView.findViewById(R.id.hotelLocation_homeFr)
-        val image: ImageView = itemView.findViewById(R.id.hotel_image_homeFr)
-        val price: TextView = itemView.findViewById(R.id.hotelPrice_homeFr)
-        val ratingBar: RatingBar = itemView.findViewById(R.id.rBar)
+        val name: TextView = viewItem.findViewById(R.id.hotelName_homeFr)
+        val location: TextView = viewItem.findViewById(R.id.hotelLocation_homeFr)
+        val image: ImageView = viewItem.findViewById(R.id.hotel_image_homeFr)
+        val price: TextView = viewItem.findViewById(R.id.hotelPrice_homeFr)
+        val ratingBar: RatingBar = viewItem.findViewById(R.id.rBar)
 
 
     }

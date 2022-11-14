@@ -28,22 +28,18 @@ class SignUpViewModel : ViewModel() {
         password: String,
         fullname: String,
     ) {
+        when {
+            eMail.isEmpty() || password.isEmpty() || fullname.isEmpty() -> _isInfosValid.value = false
 
-        if (eMail.isEmpty() || password.isEmpty() || fullname.isEmpty()) {
-            _isInfosValid.value = false
-        } else {
+            Patterns.EMAIL_ADDRESS.matcher(eMail).matches().not() -> _isValidMail.value = false
 
-            if (Patterns.EMAIL_ADDRESS.matcher(eMail).matches().not()) {
-                _isValidMail.value = false
-            } else
-                if (password.length < 8) {
-                    _isPasswordMatch.value = false
+            password.length < 8 -> _isPasswordMatch.value = false
 
-                } else {
-                    _isSignUp.value = true
-                    usersRepo.signUp(eMail, password, fullname)
+            else -> {
+                _isSignUp.value = true
+                usersRepo.signUp(eMail, password, fullname)
 
-                }
+            }
         }
     }
 }

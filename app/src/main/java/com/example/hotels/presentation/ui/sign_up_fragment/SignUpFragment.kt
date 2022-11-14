@@ -146,7 +146,7 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up), View.OnClickListener
             }
 
             button_signup_login -> {
-                findNavController().navigate(R.id.action_signUpFragment_to_logInFragment)
+                findNavController().navigate(R.id.logInFragment)
             }
         }
     }

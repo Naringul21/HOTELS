@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
+import android.widget.Filter
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.lifecycle.Observer
@@ -14,8 +16,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hotels.HOTELS.data.models.Hotels
 import com.example.hotels.HOTELS.presentation.adapter.RvSeeAllListAdapter
 import com.example.hotels.HOTELS.utils.Navigator
+import com.example.hotels.HOTELS.utils.showSnackbar
 import com.example.hotels.R
+import com.example.hotels.data.repositories.FirestoreRepositoryImpl
 import com.example.hotels.databinding.FragmentSeeAllBinding
+import com.example.hotels.domain.models.FavoriteItem
 import kotlinx.android.synthetic.main.fragment_see_all.*
 import kotlinx.android.synthetic.main.rv_see_all_list_items.*
 
@@ -24,6 +29,9 @@ class SeeAllFragment : Fragment(R.layout.fragment_see_all), Navigator {
     private var _binding: FragmentSeeAllBinding? = null
     private val binding: FragmentSeeAllBinding get() = _binding!!
     private lateinit var seeAllListAdapter: RvSeeAllListAdapter
+    private lateinit var repo: FirestoreRepositoryImpl
+    lateinit var favoriteItem: FavoriteItem
+    lateinit var hotels: Hotels
 
     private val viewModel by lazy { ViewModelProviders.of(this)[SeeAllFragmentViewModel::class.java] }
 
@@ -46,7 +54,7 @@ class SeeAllFragment : Fragment(R.layout.fragment_see_all), Navigator {
 
         observeData()
         filterList()
-
+//        setAddToFavoritesButtonListener()
 
 
     }
@@ -69,8 +77,8 @@ class SeeAllFragment : Fragment(R.layout.fragment_see_all), Navigator {
         findNavController().navigate(R.id.fragment_hotel_details, bundle)
     }
 
-    private fun filterList(){
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+    private fun filterList() {
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(filterString: String?): Boolean {
                 seeAllListAdapter!!.filter.filter(filterString)
                 return true
@@ -82,16 +90,24 @@ class SeeAllFragment : Fragment(R.layout.fragment_see_all), Navigator {
             }
 
         })
-
     }
 
-    private fun favoriteButtonChecked(){
-        favorite_button.setOnCheckedChangeListener { checkbox, isChecked ->
-            if (isChecked){
-                Toast.makeText(requireContext(), "Hotel added to favorite list", Toast.LENGTH_SHORT).show()
-            }else{
-                Toast.makeText(requireContext(), "Hotel removed from favorite list", Toast.LENGTH_SHORT).show()
-            }
-        }
+//    private fun setAddToFavoritesButtonListener() {
+//        binding.apply {
+//            favorite_button_seeAll?.setOnCheckedChangeListener { compoundButton, b ->  }
+//                if (!favorite_button_seeAll.isChecked) {
+//                    favoriteItem.isFavorite = true
+//                    viewModel.addFavoriteList(favoriteItem)
+//                    showSnackbar(requireView(), R.string.added_to_favorite_list)
+//                } else {
+//                    favoriteItem.isFavorite = false
+//                    viewModel.removeFromFavoriteList(favoriteItem)
+//                    showSnackbar(requireView(), R.string.remove_from_favorite_list)
+//                }
+//            }
+//        }
     }
-}
+
+
+
+

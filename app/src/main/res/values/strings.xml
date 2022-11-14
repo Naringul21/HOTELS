@@ -12,6 +12,8 @@
     <string name="password_match_error">Your password must be at least 8 charachters</string>
     <string name="sign_up_reg_success_text">Registered Successfully</string>
     <string name="registered_mail">Registered mail!</string>
+    <string name="added_to_favorite_list">Added to favorite list</string>
+    <string name="remove_from_favorite_list">Remove from favorite list</string>
     <string name="swimming_pool">Swimming pool</string>
     <string name="free_wifi">WiFi</string>
     <string name="spa">Spa</string>
