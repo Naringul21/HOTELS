@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="200dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".HOTELS.presentation.ui.AdsFragment"
+    tools:context=".presentation.ui.ads.AdsFragment"
     android:background="@color/red">
 
 

@@ -5,10 +5,7 @@ import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CheckBox
-import android.widget.Filter
 import android.widget.SearchView
-import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
@@ -16,16 +13,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hotels.HOTELS.data.models.Hotels
 import com.example.hotels.HOTELS.presentation.adapter.RvSeeAllListAdapter
 import com.example.hotels.HOTELS.utils.Navigator
-import com.example.hotels.HOTELS.utils.showSnackbar
 import com.example.hotels.R
 import com.example.hotels.data.repositories.FirestoreRepositoryImpl
 import com.example.hotels.databinding.FragmentSeeAllBinding
 import com.example.hotels.domain.models.FavoriteItem
 import kotlinx.android.synthetic.main.fragment_see_all.*
-import kotlinx.android.synthetic.main.rv_see_all_list_items.*
 
 
-class SeeAllFragment : Fragment(R.layout.fragment_see_all), Navigator {
+class AllItemsFragment : Fragment(R.layout.fragment_see_all), Navigator {
     private var _binding: FragmentSeeAllBinding? = null
     private val binding: FragmentSeeAllBinding get() = _binding!!
     private lateinit var seeAllListAdapter: RvSeeAllListAdapter
@@ -33,7 +28,7 @@ class SeeAllFragment : Fragment(R.layout.fragment_see_all), Navigator {
     lateinit var favoriteItem: FavoriteItem
     lateinit var hotels: Hotels
 
-    private val viewModel by lazy { ViewModelProviders.of(this)[SeeAllFragmentViewModel::class.java] }
+    private val viewModel by lazy { ViewModelProviders.of(this)[AllItemsFragmentViewModel::class.java] }
 
     override fun onCreateView(
         inflater: LayoutInflater,

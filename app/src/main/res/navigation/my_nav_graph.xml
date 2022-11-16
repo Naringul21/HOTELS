@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/seeAllFragment"
-        android:name="com.example.hotels.HOTELS.presentation.ui.see_all_fragment.SeeAllFragment"
+        android:name="com.example.hotels.HOTELS.presentation.ui.see_all_fragment.AllItemsFragment"
         android:label="fragment_seeAll"
         tools:layout="@layout/fragment_see_all" >
         <action
@@ -85,7 +85,7 @@
     </fragment>
     <fragment
         android:id="@+id/cartFragment2"
-        android:name="com.example.hotels.presentation.ui.CartFragment"
+        android:name="com.example.hotels.presentation.ui.cart.CartFragment"
         android:label="fragment_cart"
         tools:layout="@layout/fragment_card" />
 

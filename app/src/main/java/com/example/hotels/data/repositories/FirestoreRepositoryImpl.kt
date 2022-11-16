@@ -1,29 +1,18 @@
 package com.example.hotels.data.repositories
 
-import android.app.Activity
-import android.content.Context
 import android.util.Log
-import android.view.View
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.hotels.HOTELS.data.models.Hotels
 import com.example.hotels.HOTELS.presentation.ui.detail_fragment.DetailFragment
-import com.example.hotels.HOTELS.utils.showSnackbar
-import com.example.hotels.R
 import com.example.hotels.domain.models.CardItems
 import com.example.hotels.domain.models.FavoriteItem
 import com.example.hotels.domain.repositories.FirestoreRepository
-import com.example.hotels.presentation.ui.CartFragment
-import com.google.android.gms.auth.api.Auth
-import com.google.android.material.snackbar.Snackbar
+import com.example.hotels.presentation.ui.cart.CartFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QueryDocumentSnapshot
 import com.google.firebase.firestore.SetOptions
@@ -36,11 +25,6 @@ import kotlinx.coroutines.launch
 class FirestoreRepositoryImpl :FirestoreRepository {
     private val coroutineScope = CoroutineScope(Dispatchers.IO)
     private val db = Firebase.firestore
-    private val auth = Firebase.auth
-    private var hotels=Hotels()
-    private val hotelId=""
-    private val hotelName=""
-    private val favoriteItem=FavoriteItem()
 
 
     override fun addToCardItem(card: CardItems) {
@@ -56,14 +40,22 @@ class FirestoreRepositoryImpl :FirestoreRepository {
             }
     }
 
-    override fun addToFavoriteItem() {
-        val hashMap=HashMap<String, Any>()
-        hashMap["hotelId"]=hotelId
-        hashMap["name"]=hotelName
+    override fun removeItemCart() {
+        db.collection("cart_items")
+            .document(getCurrentUserID())
+            .delete()
+            .addOnSuccessListener {
+                Log.d("cart", "Delete item")
+            }
+            .addOnFailureListener { e ->
+                Log.e("cart", "Error while deleting  cart items", e)
+            }
+    }
 
-        val ref=FirebaseDatabase.getInstance().getReference("users")
-        ref.child(getCurrentUserID()).child("favorites").child(hotelId)
-            .setValue(hashMap)
+    override fun addToFavoriteItem(favoriteItem: FavoriteItem) {
+        db.collection("favorite_items")
+            .document(getCurrentUserID())
+            .set(favoriteItem, SetOptions.merge())
             .addOnSuccessListener {
                 Log.d("favorite", "Add item to favorite list")
             }
@@ -74,9 +66,9 @@ class FirestoreRepositoryImpl :FirestoreRepository {
     }
 
     override fun removeItemFavorite() {
-        val ref=FirebaseDatabase.getInstance().getReference("users")
-        ref.child(getCurrentUserID()).child("favorites").child(hotelId)
-            .removeValue()
+        db.collection("favorite_items")
+            .document(getCurrentUserID())
+            .delete()
             .addOnSuccessListener {
                 Log.d("favorite", "Remove item from favorite list")
 
@@ -87,19 +79,6 @@ class FirestoreRepositoryImpl :FirestoreRepository {
 
             }
     }
-
-
-    override fun removeItemCart(position: Int) {
-            db.collection("cart_items")
-                .document(getCurrentUserID())
-                .delete()
-                .addOnSuccessListener {
-                    Log.d("cart", "Delete item")
-                }
-                .addOnFailureListener { e ->
-                    Log.e("cart", "Error while deleting  cart items", e)
-                }
-        }
 
 
 
@@ -199,20 +178,6 @@ class FirestoreRepositoryImpl :FirestoreRepository {
             }
     }
 
-    fun checkIfItemAlreadyInCart(fragment: DetailFragment,hotelId: String){
-        db.collection("cart_items")
-            .whereEqualTo("user_id",getCurrentUserID())
-            .whereEqualTo("product_id",hotelId)
-            .get()
-            .addOnSuccessListener { document->
-                if(document.documents.size>0){
-                    Log.d("firestore","Adding product to cart")
-                }
-            }
-            .addOnFailureListener {e->
-                Log.e("firestore","Error while adding product to cart",e)
-            }
-    }
 
     fun getCurrentUserID(): String {
         val currentUser = FirebaseAuth.getInstance().currentUser

@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.hotels.HOTELS.presentation.adapter.ViewPagerAdapter
-import com.example.hotels.HOTELS.presentation.ui.AdsFragment
+import com.example.hotels.presentation.ui.ads.AdsFragment
 import com.example.hotels.R
 import kotlinx.android.synthetic.main.fragment_on_boarding_ads.view.*
 

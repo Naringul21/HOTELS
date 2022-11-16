@@ -6,16 +6,11 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hotels.HOTELS.data.models.Hotels
-import com.example.hotels.HOTELS.presentation.ui.see_all_fragment.SeeAllFragmentViewModel
+import com.example.hotels.HOTELS.presentation.ui.see_all_fragment.AllItemsFragmentViewModel
 import com.example.hotels.HOTELS.utils.Navigator
 import com.example.hotels.R
 import com.example.hotels.data.repositories.FirestoreRepositoryImpl
 import com.example.hotels.domain.models.FavoriteItem
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 import com.squareup.picasso.Picasso
 
 class RvSeeAllListAdapter(val navigator: Navigator) :
@@ -23,7 +18,7 @@ class RvSeeAllListAdapter(val navigator: Navigator) :
     private var imageClick = false
     lateinit var repo: FirestoreRepositoryImpl
     lateinit var favoriteItem: FavoriteItem
-    lateinit var viewModel: SeeAllFragmentViewModel
+    lateinit var viewModel: AllItemsFragmentViewModel
 
 
 

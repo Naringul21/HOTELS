@@ -1,4 +1,4 @@
-package com.example.hotels.presentation.ui
+package com.example.hotels.presentation.ui.cart
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,15 +9,11 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hotels.HOTELS.data.models.Hotels
-import com.example.hotels.HOTELS.presentation.adapter.RvSeeAllListAdapter
-import com.example.hotels.HOTELS.presentation.ui.see_all_fragment.SeeAllFragmentViewModel
 import com.example.hotels.databinding.FragmentCardBinding
 import com.example.hotels.domain.models.CardItems
 import com.example.hotels.presentation.adapter.CartAdapter
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.cart_list_item.*
 import kotlinx.android.synthetic.main.fragment_card.*
-import kotlinx.android.synthetic.main.fragment_see_all.*
 
 class CartFragment : Fragment() {
     private var _binding: FragmentCardBinding? = null

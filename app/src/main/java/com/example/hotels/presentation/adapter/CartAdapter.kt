@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.hotels.R
 import com.example.hotels.data.repositories.FirestoreRepositoryImpl
 import com.example.hotels.domain.models.CardItems
-import com.example.hotels.presentation.ui.CartFragment
+import com.example.hotels.presentation.ui.cart.CartFragment
 import com.squareup.picasso.Picasso
 
 class CartAdapter(private val context: Context, private val items:ArrayList<CardItems>) : RecyclerView.Adapter<CartAdapter.CartHolder>(){
@@ -59,7 +59,7 @@ lateinit var repo: FirestoreRepositoryImpl
         holder.removeItem.setOnClickListener {
 
             if(cartItem.checkout_quantity=="1"){
-                repo.removeItemCart(position)
+                repo.removeItemCart()
             }else{
                 val checkoutQuantity=cartItem.checkout_quantity.toInt()
                 val itemHashMap=HashMap<String,Any>()

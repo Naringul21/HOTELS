@@ -1,4 +1,4 @@
-package com.example.hotels.presentation.ui
+package com.example.hotels.presentation.ui.reservation
 
 import android.app.DatePickerDialog
 import android.content.res.Resources

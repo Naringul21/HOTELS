@@ -7,7 +7,7 @@ import com.example.hotels.HOTELS.data.models.Hotels
 import com.example.hotels.data.repositories.FirestoreRepositoryImpl
 import com.example.hotels.domain.models.FavoriteItem
 
-class SeeAllFragmentViewModel:ViewModel() {
+class AllItemsFragmentViewModel:ViewModel() {
     private val repo = FirestoreRepositoryImpl()
     fun getDataSeeAll(): LiveData<MutableList<Hotels>> {
         val mutableData = MutableLiveData<MutableList<Hotels>>()

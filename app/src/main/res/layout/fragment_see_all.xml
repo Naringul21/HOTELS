@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:id="@+id/seeAllFragment"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".HOTELS.presentation.ui.see_all_fragment.SeeAllFragment">
+    tools:context=".HOTELS.presentation.ui.see_all_fragment.AllItemsFragment">
 
     <SearchView
         android:id="@+id/searchView"
