@@ -19,17 +19,17 @@
 
         <ImageView
             android:id="@+id/hotel_image_seeAll"
-            android:layout_width="80dp"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="5dp"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/hotelName_seeAll"
-            android:layout_width="200dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -48,16 +48,6 @@
             android:numStars="5"
             style="?android:attr/ratingBarStyleIndicator"
             android:progressTint="#FFCC01"/>
-
-<!--        <CheckBox-->
-<!--            android:id="@+id/favorite_button_seeAll"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="30dp"-->
-<!--            android:layout_marginTop="15dp"-->
-<!--            android:button="@drawable/selector_wishlist_item"-->
-<!--            app:layout_constraintStart_toEndOf="@id/hotelName_seeAll"-->
-<!--            app:layout_constraintTop_toTopOf="parent" />-->
 
 
         <ImageView

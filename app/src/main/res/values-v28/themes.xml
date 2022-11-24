@@ -25,10 +25,11 @@
     <style name="button_style" parent="Widget.Material3.Button">
         <item name="android:backgroundTint">@color/toolbar_background1</item>
         <item name="android:gradientRadius" >3dp</item>
+    </style>
 
-
-
-
+    <style name="roundedImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
     </style>
 
 </resources>

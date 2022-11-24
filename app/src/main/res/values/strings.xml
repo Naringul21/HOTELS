@@ -13,10 +13,11 @@
     <string name="sign_up_reg_success_text">Registered Successfully</string>
     <string name="registered_mail">Registered mail!</string>
     <string name="added_to_favorite_list">Added to favorite list</string>
-    <string name="remove_from_favorite_list">Remove from favorite list</string>
+    <string name="remove_from_favorite_list">Remove item from your favorite list!</string>
+    <string name="remove_from_cart_list">Remove item from your cart!</string>
     <string name="add_to_cart">Added to cart</string>
-    <string name="remove_from_cart">Removed from cart</string>
     <string name="already_in_cart">This item already in cart</string>
+    <string name="update_profile">Your profile is updated successfully</string>
 
 
     <string name="swimming_pool">Swimming pool</string>

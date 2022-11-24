@@ -9,5 +9,6 @@ data class CardItems(
     val id: String = "",
     var checkout_quantity: String = "",
     val userId: String = "",
+    val documentId: String=""
 
     ) : Serializable

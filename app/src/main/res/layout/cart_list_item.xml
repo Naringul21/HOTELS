@@ -19,9 +19,9 @@
 
         <ImageView
             android:id="@+id/hotel_image_cartList"
-            android:layout_width="80dp"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="5dp"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
@@ -36,58 +36,51 @@
             app:layout_constraintStart_toEndOf="@id/hotel_image_cartList"
             app:layout_constraintTop_toTopOf="parent" />
 
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/ll_cart_quantity"
-    android:orientation="horizontal"
-    android:layout_marginBottom="10dp"
-    android:gravity="center"
-    app:layout_constraintStart_toEndOf="@id/hotel_image_cartList"
-    app:layout_constraintBottom_toBottomOf="parent">
-        <ImageButton
-            android:id="@+id/cart_remove_item"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_remove_24"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="5dp"
-            />
+
         <TextView
-            android:id="@+id/cart_item_quantity"
+            android:id="@+id/info_cartlist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="1"
-            android:elevation="5dp"
-            android:textSize="25sp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:background="@color/white"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"/>
-        <ImageButton
-            android:id="@+id/cart_add_item"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_add_24"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="10dp"
-            />
-</LinearLayout>
+            android:text="1 night/2adults"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/hotelName_cartList"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="10dp"/>
 
         <TextView
             android:id="@+id/hotelPrice_cartList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
             android:textColor="@color/black"
-            android:textSize="16sp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintStart_toStartOf="@id/hotelName_cartList"
+            app:layout_constraintBottom_toBottomOf="@id/info_cartlist"
+            android:layout_marginStart="25dp"/>
+
+        <ImageView
+            android:id="@+id/close_btn"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_baseline_close_24"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        <Button
+            android:id="@+id/checkout_button"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_payment"
+            android:text="Checkout"
+            android:textColor="@color/white"
+            android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/hotelName_cartList"
-            android:layout_marginEnd="15dp"/>
+            app:layout_constraintBottom_toBottomOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

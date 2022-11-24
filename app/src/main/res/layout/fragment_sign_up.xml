@@ -38,7 +38,8 @@
         android:textColor="@color/toolbar_background3"
         android:textSize="40dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/signUpImage" />
+        app:layout_constraintTop_toBottomOf="@id/signUpImage"
+       android:layout_marginStart="10dp"/>
 
     <TextView
         android:id="@+id/text_info1"
@@ -47,6 +48,7 @@
         style="@style/text_style"
         android:textSize="18sp"
         android:text="Please fill in your details"
+        android:layout_marginStart="10dp"
         android:textColor="@color/toolbar_background3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_Signup" />
@@ -60,7 +62,8 @@
         app:boxStrokeColor="@color/toolbar_background3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_info1">
+        app:layout_constraintTop_toBottomOf="@id/text_info1"
+        android:layout_marginHorizontal="5dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_fullName"
@@ -82,7 +85,8 @@
         app:boxStrokeColor="@color/toolbar_background3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fullNameInputLayout">
+        app:layout_constraintTop_toBottomOf="@+id/fullNameInputLayout"
+        android:layout_marginHorizontal="5dp">
 
 
         <com.google.android.material.textfield.TextInputEditText
@@ -107,7 +111,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailInputLayout"
-        app:passwordToggleEnabled="false">
+        app:passwordToggleEnabled="false"
+        android:layout_marginHorizontal="5dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_password"

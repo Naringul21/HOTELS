@@ -10,10 +10,11 @@ data class Hotels(
     val meal: String = "",
     val room: String = "",
     val description: String = "",
-    val lat: Double=0.0,
-    val lng: Double=0.0,
-    val rating: Long =0,
-    val hotel_id: String="",
-    val checkout_quantity: String=""
+    val lat: Double = 0.0,
+    val lng: Double = 0.0,
+    val rating: Long = 0,
+    val hotel_id: String = "",
+    val checkout_quantity: String = "",
+    val userId: String = "",
 
-) : Serializable
+    ) : Serializable

@@ -88,6 +88,16 @@
         android:name="com.example.hotels.presentation.ui.cart.CartFragment"
         android:label="fragment_cart"
         tools:layout="@layout/fragment_card" />
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.example.hotels.presentation.ui.favorite.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" />
+    <fragment
+        android:id="@+id/personFragment"
+        android:name="com.example.hotels.presentation.ui.PersonFragment"
+        android:label="fragment_person"
+        tools:layout="@layout/fragment_person" />
 
 
 </navigation>

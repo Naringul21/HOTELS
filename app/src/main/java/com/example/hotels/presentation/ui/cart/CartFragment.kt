@@ -9,9 +9,14 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hotels.HOTELS.data.models.Hotels
+import com.example.hotels.HOTELS.utils.showSnackbar
+import com.example.hotels.R
+import com.example.hotels.data.repositories.FirestoreRepositoryImpl
 import com.example.hotels.databinding.FragmentCardBinding
 import com.example.hotels.domain.models.CardItems
+import com.example.hotels.domain.models.FavoriteItem
 import com.example.hotels.presentation.adapter.CartAdapter
+import com.example.hotels.presentation.adapter.FavoriteAdapter
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_card.*
 
@@ -19,7 +24,6 @@ class CartFragment : Fragment() {
     private var _binding: FragmentCardBinding? = null
     private val binding: FragmentCardBinding get() = _binding!!
     private lateinit var cartAdapter: CartAdapter
-    private lateinit var hotelList: ArrayList<Hotels>
     private var cartItemList = ArrayList<CardItems>()
 
     private val viewModel by lazy { ViewModelProviders.of(this)[CartViewModel::class.java] }
@@ -44,49 +48,47 @@ class CartFragment : Fragment() {
         viewModel.getDataCart().observe(viewLifecycleOwner, Observer {
             rv_cart_items.layoutManager = LinearLayoutManager(activity)
             rv_cart_items.setHasFixedSize(true)
-            cartAdapter = CartAdapter(requireContext(), cartItemList)
+            cartAdapter = CartAdapter(requireContext())
             cartAdapter.setListData(it as MutableList<CardItems>)
             rv_cart_items.adapter = cartAdapter
             cartAdapter.notifyDataSetChanged()
 
         })
-    }
-
-    fun cartItemRemoveDone(position: Int) {
-        Snackbar.make(requireView(), "Item is removed from your cart!", Snackbar.LENGTH_LONG).show()
-        cartItemList.removeAt(position)
-        cartAdapter.notifyItemRemoved(position)
-        cartAdapter.notifyItemRangeChanged(0, cartItemList.size)
 
     }
 
-//    private fun setupRecyclerView(){
-//        binding.apply {
-//            rv_cart_items.layoutManager = LinearLayoutManager(activity)
-//            rv_cart_items.setHasFixedSize(true)
-//            cartAdapter = CartAdapter()
-//            rv_cart_items.adapter = cartAdapter
-//        }
-//    }
 
     fun getCartItemsDone(cartList: ArrayList<CardItems>) {
-
         cartItemList.clear()
         cartItemList.addAll(cartList)
+        updateCart()
     }
 
     private fun updateCart() {
         if (cartItemList.size > 0) {
             binding.rvCartItems.visibility = View.VISIBLE
-//            binding.noItemsFound.visibility= View.GONE
 
         }
     }
 
-    fun cartItemUpdateDone(item:CardItems,position:Int){
-        cartItemList[position].checkout_quantity=item.checkout_quantity
+    fun cartItemUpdateDone(item: CardItems, position: Int) {
+        cartItemList[position].checkout_quantity = item.checkout_quantity
         cartAdapter.notifyItemChanged(position)
         updateCart()
-//          getCartItems()
+        getCartItems()
     }
+
+    private fun getCartItems() {
+        FirestoreRepositoryImpl().getCartItems(this)
+    }
+
+    fun cartItemRemoveDone(position: Int) {
+        showSnackbar(requireView(), R.string.remove_from_cart_list)
+        cartItemList.removeAt(position)
+        cartAdapter.notifyItemRemoved(position)
+        cartAdapter.notifyItemRangeChanged(0, cartItemList.size)
+        updateCart()
+    }
+
+
 }

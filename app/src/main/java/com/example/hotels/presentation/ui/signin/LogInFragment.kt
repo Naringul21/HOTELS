@@ -43,7 +43,7 @@ class LogInFragment : Fragment(R.layout.fragment_log_in), View.OnClickListener {
             with(viewModel) {
 
                 isSignIn.observe(viewLifecycleOwner) { it ->
-                    if (it==true) {
+                    if (it) {
                         findNavController().navigate(R.id.homeFragment)
                     } else {
                         emailInputLayoutLogin.error = getString(R.string.invalid_mail)

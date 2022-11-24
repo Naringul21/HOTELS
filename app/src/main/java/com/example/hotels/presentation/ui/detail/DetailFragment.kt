@@ -4,6 +4,7 @@ package com.example.hotels.HOTELS.presentation.ui.detail_fragment
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
@@ -21,6 +22,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.MarkerOptions
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_hotel_details.*
+import java.util.*
 
 class DetailFragment : Fragment(R.layout.fragment_hotel_details), OnMapReadyCallback {
     private lateinit var googleMap: GoogleMap
@@ -29,6 +31,8 @@ class DetailFragment : Fragment(R.layout.fragment_hotel_details), OnMapReadyCall
     private var hotel = Hotels()
     private var hotelId: String = ""
     private var isInMyFavorite = false
+    private var favoriteItem= FavoriteItem()
+    private val fav_id=""
 
     private val viewModel by lazy { ViewModelProviders.of(this)[DetailViewModel::class.java] }
 
@@ -59,8 +63,9 @@ class DetailFragment : Fragment(R.layout.fragment_hotel_details), OnMapReadyCall
 
 
         addToCart()
-        productAlreadyInCart(hotel)
         addToFavorite()
+        checkCartItem(hotel, hotelId)
+
 
 
     }
@@ -84,9 +89,11 @@ class DetailFragment : Fragment(R.layout.fragment_hotel_details), OnMapReadyCall
                 price = hotel.price,
                 image = hotel.image,
                 checkout_quantity = hotel.checkout_quantity,
+                id=hotel.hotel_id,
+                documentId = UUID.randomUUID().toString()
             )
             viewModel.addToCart(cartItem)
-            binding.addToCard.visibility = View.GONE
+            binding.addToCard.visibility =GONE
             showSnackbar(requireView(), R.string.add_to_cart)
         }
     }
@@ -94,26 +101,40 @@ class DetailFragment : Fragment(R.layout.fragment_hotel_details), OnMapReadyCall
 
     private fun addToFavorite() {
         favorite_button_details.setOnClickListener {
-            if (!isInMyFavorite) {
-                isInMyFavorite = true
+            if (!favoriteItem.isFavorite) {
+                favoriteItem.isFavorite = true
                 val favoriteItem = FavoriteItem(
                     name = hotel.name,
                     userId = FirestoreRepositoryImpl().getCurrentUserID(),
                     image = hotel.image,
                     location = hotel.location,
-                    price = hotel.price
+                    price = hotel.price,
+                    id = hotel.hotel_id,
+                    isFavorite = false,
+                    documentId = UUID.randomUUID().toString()
+
                 )
                 viewModel.addFavoriteList(favoriteItem)
                 favorite_button_details.setImageResource(R.drawable.ic_baseline_favorite_red)
                 showSnackbar(requireView(), R.string.added_to_favorite_list)
 
             } else {
-                isInMyFavorite = false
-                viewModel.removeFromFavoriteList()
+                favoriteItem.isFavorite = false
+                viewModel.removeFromFavoriteList(favoriteItem)
                 favorite_button_details.setImageResource(R.drawable.ic_baseline_favorite_border_24)
                 showSnackbar(requireView(), R.string.remove_from_favorite_list)
 
             }
+        }
+    }
+
+    fun productAlreadyInCart(){
+        binding.addToCard.visibility=GONE
+    }
+
+    private fun checkCartItem(hotel: Hotels, hotelId: String) {
+        if (FirestoreRepositoryImpl().getCurrentUserID() != hotel.userId) {
+            FirestoreRepositoryImpl().checkIfItemAlreadyInCart(this, hotelId)
         }
     }
 
@@ -135,5 +156,6 @@ class DetailFragment : Fragment(R.layout.fragment_hotel_details), OnMapReadyCall
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+
     }
 }

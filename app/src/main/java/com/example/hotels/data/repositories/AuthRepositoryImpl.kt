@@ -1,8 +1,11 @@
 package com.example.hotels.HOTELS.domain.repositorys
 
+import android.content.ContentValues
 import android.util.Log
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.hotels.HOTELS.data.models.FirebaseUserModel
+import com.example.hotels.HOTELS.data.models.User
 import com.example.hotels.HOTELS.utils.Constants.COLLECTION_PATH
 import com.example.hotels.HOTELS.utils.Constants.E_MAIL
 import com.example.hotels.HOTELS.utils.Constants.FAILURE
@@ -12,8 +15,12 @@ import com.example.hotels.HOTELS.utils.Constants.PASSWORD
 import com.example.hotels.HOTELS.utils.Constants.SIGN_IN
 import com.example.hotels.HOTELS.utils.Constants.SIGN_UP
 import com.example.hotels.HOTELS.utils.Constants.SUCCESS
+import com.example.hotels.data.repositories.FirestoreRepositoryImpl
+import com.example.hotels.domain.models.FavoriteItem
 import com.example.hotels.domain.repositories.AuthRepository
+import com.example.hotels.presentation.ui.favorite.FavoriteFragment
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.QueryDocumentSnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.CoroutineScope
@@ -26,7 +33,7 @@ class AuthRepositoryImpl() : AuthRepository {
 
     var isSignUp = MutableLiveData<Boolean>()
 
-    var userInfo = MutableLiveData<FirebaseUserModel>()
+
 
     private val auth = Firebase.auth
     private val db = Firebase.firestore
@@ -48,7 +55,7 @@ class AuthRepositoryImpl() : AuthRepository {
     }
 
     override fun signUp(eMail: String, password: String, fullname: String) {
-        coroutineScope.launch {
+
             auth.createUserWithEmailAndPassword(eMail, password).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     val currentUser = auth.currentUser
@@ -65,10 +72,11 @@ class AuthRepositoryImpl() : AuthRepository {
                             .addOnSuccessListener {
                                 isSignUp.value = true
                                 Log.d(SIGN_UP, SUCCESS)
+
                             }
                             .addOnFailureListener { e ->
                                 isSignUp.value = false
-                                Log.w(SIGN_UP, FAILURE, e)
+                                Log.w(SIGN_UP, "Error", e)
                             }
                     }
 
@@ -77,8 +85,57 @@ class AuthRepositoryImpl() : AuthRepository {
                     Log.w(SIGN_UP, FAILURE, task.exception)
                 }
             }
-        }
     }
+
+    fun getUserInfo() : MutableLiveData<User> {
+        var userInfo = MutableLiveData<User>()
+        auth.currentUser?.let { user ->
+
+            val docRef = db.collection("users").document(user.uid)
+            docRef.get()
+                .addOnSuccessListener { document ->
+                    document?.let {
+                        userInfo.value = User(
+                            document.get("email") as String,
+                            document.get("fullname") as String
+                        )
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    Log.d(ContentValues.TAG, "get failed with ", exception)
+                }
+        }
+        return userInfo
+    }
+
+    fun getUser(): MutableLiveData<MutableList<User>> {
+        val mutableData = MutableLiveData<MutableList<User>>()
+        val userList = ArrayList<User>()
+        coroutineScope.launch {
+            db.collection("users")
+                .whereEqualTo("userId", FirestoreRepositoryImpl().getCurrentUserID())
+                .get()
+                .addOnSuccessListener {
+                    val userData: MutableList<User> = mutableListOf<User>()
+                    for (document: QueryDocumentSnapshot in it) {
+                        val docId = document.getString("documentId") ?: ""
+                        val fullname: String = document.getString("fullname") ?: ""
+                        val id: String = document.getString("id") ?: ""
+                        val email: String=document.getString("email") ?:""
+                        val user =
+                            User(fullName = fullname,
+                                user_id = id,
+                                documentId = docId
+                            )
+                        userData.add(user)
+                    }
+                    mutableData.value = userData
+
+        }}
+        return mutableData
+    }
+
+
 
     override fun signOut() {
         coroutineScope.launch {
@@ -86,6 +143,8 @@ class AuthRepositoryImpl() : AuthRepository {
         }
 
     }
+
+
 }
 
 

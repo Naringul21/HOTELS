@@ -69,6 +69,8 @@ class FirstActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.home -> navController.navigate(R.id.homeFragment)
                 R.id.cart -> navController.navigate(R.id.cartFragment2)
+                R.id.favorite-> navController.navigate(R.id.favoriteFragment)
+                R.id.person-> navController.navigate(R.id.personFragment)
             }
             true
         }}

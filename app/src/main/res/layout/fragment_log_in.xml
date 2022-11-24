@@ -41,7 +41,8 @@
         android:textSize="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/logInImage"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"/>
 
     <TextView
         style="@style/text_style"
@@ -52,7 +53,8 @@
         android:text="Please fill in your details"
         android:textColor="@color/toolbar_background3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_Login" />
+        app:layout_constraintTop_toBottomOf="@id/text_Login"
+        android:layout_marginStart="10dp"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/emailInputLayoutLogin"
@@ -61,6 +63,7 @@
             android:layout_marginTop="10dp"
             android:textColorHint="@color/text_color"
             app:boxStrokeColor="@color/toolbar_background3"
+            android:layout_marginHorizontal="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_info2">
@@ -78,6 +81,7 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginHorizontal="5dp"
             android:id="@+id/passwordInputLayoutLogin"
             android:layout_width="match_parent"
             android:layout_height="60dp"

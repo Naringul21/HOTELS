@@ -7,7 +7,8 @@ data class FavoriteItem(
     val location: String = "",
     val image: String = "",
     val price: String = "",
-    val id: String="",
-    val isFavorite: Boolean = false,
-    val userId: String=""
+    var id: String="",
+    val userId: String="",
+    var isFavorite: Boolean = false,
+    val documentId: String=""
 ): Serializable

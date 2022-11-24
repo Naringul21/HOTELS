@@ -6,7 +6,7 @@
     <Transition
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@id/start"
-        motion:duration="1000">
+        motion:duration="700">
 
         <OnSwipe
             motion:touchAnchorId="@+id/imageDetail"
@@ -75,10 +75,9 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/ic_baseline_favorite_border_24"
-            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
             motion:layout_constraintEnd_toEndOf="parent"
-            motion:layout_constraintTop_toBottomOf="@id/nameDetail"
-            android:layout_marginTop="5dp" />
+            motion:layout_constraintTop_toBottomOf="@id/imageDetail" />
 
 
         <Constraint
@@ -359,10 +358,9 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/ic_baseline_favorite_border_24"
-            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
             motion:layout_constraintEnd_toEndOf="parent"
-            motion:layout_constraintTop_toBottomOf="@id/nameDetail"
-            android:layout_marginTop="5dp" />
+            motion:layout_constraintTop_toBottomOf="@id/imageDetail" />
 
 
         <Constraint

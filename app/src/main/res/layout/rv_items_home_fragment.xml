@@ -19,9 +19,9 @@
 
     <ImageView
         android:id="@+id/hotel_image_homeFr"
-        android:layout_width="80dp"
+        android:layout_width="100dp"
         android:layout_height="match_parent"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="5dp"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
