@@ -9,8 +9,8 @@ class PersonViewModel() :ViewModel() {
     private val repo = AuthRepositoryImpl()
 
     fun getUserInfo(): MutableLiveData<User> {
-        val mutableData = MutableLiveData<MutableList<User>>()
-        repo.getUser().observeForever {
+        val mutableData = MutableLiveData<User>()
+        repo.getUserInfo().observeForever {
             mutableData.value = it
         }
         return mutableData

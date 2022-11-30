@@ -20,47 +20,47 @@
         android:layout_marginTop="20dp"
         />
 
-    <FrameLayout
-        android:id="@+id/fr_layout_filters"
-        android:layout_width="370dp"
-        android:layout_height="60dp"
-        android:background="@drawable/edit_background"
-        app:layout_constraintTop_toBottomOf="@id/searchView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal">
+<!--    <FrameLayout-->
+<!--        android:id="@+id/fr_layout_filters"-->
+<!--        android:layout_width="370dp"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:background="@drawable/edit_background"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/searchView"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:orientation="horizontal">-->
 
-        <ImageButton
-            android:layout_marginTop="2dp"
-            android:layout_marginStart="15dp"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:background="@drawable/toolbar_background"
-            android:src="@drawable/filter_icon"/>
+<!--        <ImageButton-->
+<!--            android:layout_marginTop="2dp"-->
+<!--            android:layout_marginStart="15dp"-->
+<!--            android:layout_width="55dp"-->
+<!--            android:layout_height="55dp"-->
+<!--            android:background="@drawable/toolbar_background"-->
+<!--            android:src="@drawable/filter_icon"/>-->
 
-        <ImageButton
-            android:layout_marginStart="155dp"
-            android:layout_marginTop="2dp"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:background="@drawable/toolbar_background"
-            android:src="@drawable/filter_list"/>
+<!--        <ImageButton-->
+<!--            android:layout_marginStart="155dp"-->
+<!--            android:layout_marginTop="2dp"-->
+<!--            android:layout_width="55dp"-->
+<!--            android:layout_height="55dp"-->
+<!--            android:background="@drawable/toolbar_background"-->
+<!--            android:src="@drawable/filter_list"/>-->
 
-        <ImageButton
-            android:layout_marginTop="2dp"
-            android:layout_marginStart="300dp"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:background="@drawable/toolbar_background"
-            android:src="@drawable/map_icon"/>
-    </FrameLayout>
+<!--        <ImageButton-->
+<!--            android:layout_marginTop="2dp"-->
+<!--            android:layout_marginStart="300dp"-->
+<!--            android:layout_width="55dp"-->
+<!--            android:layout_height="55dp"-->
+<!--            android:background="@drawable/toolbar_background"-->
+<!--            android:src="@drawable/map_icon"/>-->
+<!--    </FrameLayout>-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="570dp"
+        android:layout_height="645dp"
         android:id="@+id/rv_see_all_hotels"
-        app:layout_constraintTop_toBottomOf="@id/fr_layout_filters"
+        app:layout_constraintTop_toBottomOf="@id/searchView"
         android:layout_marginTop="20dp"
 
         />

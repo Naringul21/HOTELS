@@ -87,20 +87,6 @@ class AllItemsFragment : Fragment(R.layout.fragment_see_all), Navigator {
         })
     }
 
-//    private fun setAddToFavoritesButtonListener() {
-//        binding.apply {
-//            favorite_button_seeAll?.setOnCheckedChangeListener { compoundButton, b ->  }
-//                if (!favorite_button_seeAll.isChecked) {
-//                    favoriteItem.isFavorite = true
-//                    viewModel.addFavoriteList(favoriteItem)
-//                    showSnackbar(requireView(), R.string.added_to_favorite_list)
-//                } else {
-//                    favoriteItem.isFavorite = false
-//                    viewModel.removeFromFavoriteList(favoriteItem)
-//                    showSnackbar(requireView(), R.string.remove_from_favorite_list)
-//                }
-//            }
-//        }
     }
 
 

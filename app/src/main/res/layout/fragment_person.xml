@@ -28,7 +28,7 @@
 
         app:srcCompat="@mipmap/ic_launcher"/>
 
-    <com.google.android.material.imageview.ShapeableImageView
+    <ImageView
         android:id="@+id/person3"
         android:layout_width="200dp"
         android:layout_height="200dp"

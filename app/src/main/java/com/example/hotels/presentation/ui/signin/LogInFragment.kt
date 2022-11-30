@@ -8,7 +8,10 @@ import android.view.ViewGroup
 import androidx.core.view.isEmpty
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.example.hotels.HOTELS.data.models.Hotels
+import com.example.hotels.HOTELS.data.models.User
 import com.example.hotels.HOTELS.presentation.ui.home_fragment.HomeFragment
+import com.example.hotels.HOTELS.utils.Navigator
 import com.example.hotels.HOTELS.utils.showSnackbar
 import com.example.hotels.R
 import com.example.hotels.databinding.FragmentLogInBinding
@@ -84,4 +87,5 @@ class LogInFragment : Fragment(R.layout.fragment_log_in), View.OnClickListener {
             }
         }
     }
+
 }
