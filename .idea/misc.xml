@@ -3,11 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/User/.gradle/caches/transforms-3/38d2f6227ccfb70fe1a22102ee312772/transformed/jetified-firebase-ui-auth-7.2.0/res/drawable/fui_ic_check_circle_black_128dp.xml" value="0.1475" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/drawable/button_payment.xml" value="0.1395" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/drawable/button_style.xml" value="0.1335" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/drawable/edit_background.xml" value="0.1335" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/drawable/ic_baseline_alternate_email_24.xml" value="0.1475" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.117" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/drawable/ic_baseline_favorite_red.xml" value="0.117" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1475" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/drawable/person_image_back.xml" value="0.1415" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/drawable/sign_up.xml" value="0.155" />
         <entry key="..\:/Users/User/AndroidStudioProjects/HOTELS/app/src/main/res/drawable/toolbar_background.xml" value="0.1335" />

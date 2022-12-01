@@ -8,11 +8,11 @@ import com.example.hotels.HOTELS.domain.repositorys.AuthRepositoryImpl
 class PersonViewModel() :ViewModel() {
     private val repo = AuthRepositoryImpl()
 
-    fun getUserInfo(): MutableLiveData<User> {
-        val mutableData = MutableLiveData<User>()
-        repo.getUserInfo().observeForever {
-            mutableData.value = it
-        }
-        return mutableData
-    }
+//    fun getUserInfo(): MutableLiveData<User> {
+//        val mutableData = MutableLiveData<User>()
+//        repo.getUserInfo().observeForever {
+//            mutableData.value = it
+//        }
+//        return mutableData
+//    }
 }

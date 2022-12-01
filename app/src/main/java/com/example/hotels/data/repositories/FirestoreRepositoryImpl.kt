@@ -1,7 +1,5 @@
 package com.example.hotels.data.repositories
 
-import android.app.Activity
-import android.content.ContentValues.TAG
 import android.content.Context
 import android.net.Uri
 import android.util.Log
@@ -15,18 +13,9 @@ import com.example.hotels.HOTELS.presentation.ui.detail_fragment.DetailFragment
 import com.example.hotels.domain.models.CardItems
 import com.example.hotels.domain.models.FavoriteItem
 import com.example.hotels.domain.repositories.FirestoreRepository
-import com.example.hotels.presentation.ui.PersonFragment
 import com.example.hotels.presentation.ui.cart.CartFragment
 import com.example.hotels.presentation.ui.favorite.FavoriteFragment
-import com.google.android.gms.tasks.OnFailureListener
-import com.google.android.gms.tasks.OnSuccessListener
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.Query
-import com.google.firebase.firestore.QueryDocumentSnapshot
-import com.google.firebase.firestore.SetOptions
+import com.google.firebase.firestore.*
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
@@ -34,12 +23,18 @@ import com.google.firebase.storage.StorageReference
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.lang.Character.getType
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
+import com.google.firebase.auth.FirebaseAuth as FirebaseAuth
 
 class FirestoreRepositoryImpl : FirestoreRepository {
     private val coroutineScope = CoroutineScope(Dispatchers.IO)
     private val db = Firebase.firestore
     private lateinit var hotels: ArrayList<Hotels>
+    private val firestoreInstance=FirebaseFirestore.getInstance()
+    private val currentUserDocRef:DocumentReference
+    get()=firestoreInstance.document("users/${getCurrentUserID() ?: throw NullPointerException("UID is null")}")
 
 
     override fun addToCardItem(card: CardItems) {
@@ -326,6 +321,62 @@ class FirestoreRepositoryImpl : FirestoreRepository {
 
             }
     }
+
+    fun updateCurrentUser(fullname: String="", email: String="", image: String?=null ){
+        val userFieldMap= mutableMapOf<String, Any>()
+        if (fullname.isNotBlank()) userFieldMap["fullname"]=fullname
+        if (email.isNotBlank()) userFieldMap["email"]=email
+        if (image!=null) userFieldMap["image"]=image
+        currentUserDocRef.update(userFieldMap)
+    }
+
+    fun getCurrentUser(onComplete: (User)->Unit){
+        currentUserDocRef.get()
+            .addOnSuccessListener {
+                onComplete(it.toObject(User::class.java)!!)
+                Log.v("user", "getUser")
+            }
+    }
+
+    object Storage {
+//        private val storageInstance : FirebaseStorage by lazy { FirebaseStorage.getInstance() }
+        private val storageInstancee=FirebaseStorage.getInstance()
+        private val currentUserRef: StorageReference
+            get()= storageInstancee.reference.child(FirestoreRepositoryImpl().getCurrentUserID() ?: throw NullPointerException("UID is null"))
+
+        fun uploadProfilePhoto(imageBytes: ByteArray, onSuccess: (imagePath: String)-> Unit){
+            val ref= currentUserRef.child("image/${UUID.nameUUIDFromBytes(imageBytes)}")
+            ref.putBytes(imageBytes)
+                .addOnSuccessListener {
+                    onSuccess(ref.path)
+                    Log.v("storage", "load img")
+                }
+        }
+        fun pathToReference(path: String)= storageInstancee.getReference(path)
+
+
+    }
+
+
+
+
+//    fun initCurrentUserIfFirstTime(onComplete: () -> Unit) {
+//        currentUserDocRef.get().addOnSuccessListener { documentSnapshot ->
+//            if (!documentSnapshot.exists()) {
+//                val newUser = User(getCurrentUserID(),"",
+//                    "", "")
+//                currentUserDocRef.set(newUser).addOnSuccessListener {
+//                    onComplete()
+//                }
+//            }
+//            else
+//                onComplete()
+//        }
+//    }
+
+
+
+
 }
 
 
